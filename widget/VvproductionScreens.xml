@@ -34,5 +34,240 @@ under the License.
             </widgets>
         </section>
     </screen>
+    
+    <screen name="FindFaseA">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseA" />
+				<set field="headerItem" value="findFaseA" />
+
+				<set field="formShippingListName" value="${groovy: return 'ListFaseA';}" />
+				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
+
+				<!-- asmselect parameters, must be prefixed by asm_ for SetMultipleSelectJs.ftl -->
+
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<section>
+							<widgets>
+								<container style="h2">
+									<label>${uiLabelMap.VvNew}</label>
+								</container>
+								<container>
+									<include-form name="EditFaseA" location="component://vvproduction/widget/VvproductionForms.xml" />
+								</container>
+								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
+									<decorator-section name="search-options">
+										<include-form name="FindFaseA" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+									<decorator-section name="search-results">
+										<include-form name="ListFaseA" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+								</decorator-screen>
+
+							</widgets>
+						</section>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	 <screen name="FindFaseB">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseB" />
+				<set field="headerItem" value="findFaseB" />
+
+				<set field="formShippingListName" value="${groovy: return 'ListFaseB';}" />
+				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
+
+				<!-- asmselect parameters, must be prefixed by asm_ for SetMultipleSelectJs.ftl -->
+
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<section>
+							<widgets>
+								<container style="h2">
+									<label>${uiLabelMap.VvNew}</label>
+								</container>
+								<container>
+									<include-form name="EditFaseB" location="component://vvproduction/widget/VvproductionForms.xml" />
+								</container>
+								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
+									<decorator-section name="search-options">
+										<include-form name="FindFaseB" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+									<decorator-section name="search-results">
+										<include-form name="ListFaseB" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+								</decorator-screen>
+
+							</widgets>
+						</section>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	 <screen name="FindFaseC">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseC" />
+				<set field="headerItem" value="findFaseC" />
+
+				<set field="formShippingListName" value="${groovy: return 'ListFaseC';}" />
+				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
+
+				<!-- asmselect parameters, must be prefixed by asm_ for SetMultipleSelectJs.ftl -->
+
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<section>
+							<widgets>
+								<container style="h2">
+									<label>${uiLabelMap.VvNew}</label>
+								</container>
+								<container>
+									<include-form name="EditFaseC" location="component://vvproduction/widget/VvproductionForms.xml" />
+								</container>
+								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
+									<decorator-section name="search-options">
+										<include-form name="FindFaseC" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+									<decorator-section name="search-results">
+										<include-form name="ListFaseC" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+								</decorator-screen>
+
+							</widgets>
+						</section>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	 <screen name="FindFaseD">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseD" />
+				<set field="headerItem" value="findFaseD" />
+
+				<set field="formShippingListName" value="${groovy: return 'ListFaseD';}" />
+				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
+
+				<!-- asmselect parameters, must be prefixed by asm_ for SetMultipleSelectJs.ftl -->
+
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<section>
+							<widgets>
+								<container style="h2">
+									<label>${uiLabelMap.VvNew}</label>
+								</container>
+								<container>
+									<include-form name="EditFaseD" location="component://vvproduction/widget/VvproductionForms.xml" />
+								</container>
+								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
+									<decorator-section name="search-options">
+										<include-form name="FindFaseD" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+									<decorator-section name="search-results">
+										<include-form name="ListFaseD" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+								</decorator-screen>
+
+							</widgets>
+						</section>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	 <screen name="FindFaseE">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseE" />
+				<set field="headerItem" value="findFaseE" />
+
+				<set field="formShippingListName" value="${groovy: return 'ListFaseE';}" />
+				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
+
+				<!-- asmselect parameters, must be prefixed by asm_ for SetMultipleSelectJs.ftl -->
+
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<section>
+							<widgets>
+								<container style="h2">
+									<label>${uiLabelMap.VvNew}</label>
+								</container>
+								<container>
+									<include-form name="EditFaseE" location="component://vvproduction/widget/VvproductionForms.xml" />
+								</container>
+								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
+									<decorator-section name="search-options">
+										<include-form name="FindFaseE" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+									<decorator-section name="search-results">
+										<include-form name="ListFaseE" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+								</decorator-screen>
+
+							</widgets>
+						</section>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="FindFaseF">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseF" />
+				<set field="headerItem" value="findFaseF" />
+
+				<set field="formShippingListName" value="${groovy: return 'ListFaseF';}" />
+				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
+
+				<!-- asmselect parameters, must be prefixed by asm_ for SetMultipleSelectJs.ftl -->
+
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<section>
+							<widgets>
+								<container style="h2">
+									<label>${uiLabelMap.VvNew}</label>
+								</container>
+								<container>
+									<include-form name="EditFaseF" location="component://vvproduction/widget/VvproductionForms.xml" />
+								</container>
+								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
+									<decorator-section name="search-options">
+										<include-form name="FindFaseF" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+									<decorator-section name="search-results">
+										<include-form name="ListFaseF" location="component://vvproduction/widget/VvproductionForms.xml" />
+									</decorator-section>
+								</decorator-screen>
+
+							</widgets>
+						</section>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
 
 </screens>
