@@ -47,11 +47,19 @@ under the License.
         <value xml:lang="en">Abraziv</value>
         <value xml:lang="hu">Abraziv</value>
     </property>
-     <property key="VvFaseCs">
+    <property key="VvFaseCs">
+        <value xml:lang="en">Körasztal</value>
+        <value xml:lang="hu">Körasztal</value>
+    </property>
+     <property key="VvFaseDs">
         <value xml:lang="en">Csiszoló</value>
         <value xml:lang="hu">Csiszoló</value>
     </property>
-    <property key="VvFaseDs">
+    <property key="VvFaseEs">
+        <value xml:lang="en">Forgacsoló</value>
+        <value xml:lang="hu">Forgacsoló</value>
+    </property>
+    <property key="VvFaseFs">
         <value xml:lang="en">Csomagoló</value>
         <value xml:lang="hu">Csomagoló</value>
     </property>

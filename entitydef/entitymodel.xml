@@ -27,5 +27,115 @@ under the License.
     <description>None</description>
     <copyright></copyright>
     <version></version>
+    <!-- Termelés -->
+    <entity entity-name="FaseA" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseA Entity">
+		<!-- cikk szám -->
+		<field name="faseId" type="id"></field>
+		<field name="productId" type="id"></field>
+		<field name="quantity" type="floating-point"></field>
+		<field name="date" type="date-time"></field>
+		<!-- műszak -->
+		<field name="shift" type="value"></field>
+		<field name="sn" type="value"></field>
+<!-- 		<field name="wageCode" type="value"></field> -->
+		<prim-key field="faseId" />
+		<relation type="one" fk-name="productId" rel-entity-name="VvProduct">
+			<key-map field-name="productId" />
+		</relation>
+	</entity>
+	<!-- Abraziv -->
+	<entity entity-name="FaseB" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseB Entity">
+		<!-- cikk szám -->
+		<field name="faseId" type="id"></field>
+		<field name="productId" type="id"></field>
+		<field name="worker" type="value"></field>
+		<field name="quantity" type="floating-point"></field>
+		<field name="scrap" type="floating-point"></field>
+		<field name="date" type="date-time"></field>
+		<!-- műszak -->
+		<field name="shift" type="value"></field>
+		<field name="sn" type="value"></field>
+<!-- 		<field name="wageCode" type="value"></field> -->
+		<prim-key field="faseId" />
+		<relation type="one" fk-name="productId" rel-entity-name="VvProduct">
+			<key-map field-name="productId" />
+		</relation>
+	</entity>
+	<!-- Körasztal -->
+	<entity entity-name="FaseC" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseC Entity">
+		<!-- cikk szám -->
+		<field name="faseId" type="id"></field>
+		<field name="productId" type="id"></field>
+		<field name="worker" type="value"></field>
+		<field name="quantity" type="floating-point"></field>
+		<field name="scrap" type="floating-point"></field>
+		<field name="date" type="date-time"></field>
+		<!-- műszak -->
+		<field name="shift" type="value"></field>
+		<field name="sn" type="value"></field>
+<!-- 		<field name="wageCode" type="value"></field> -->
+		<prim-key field="faseId" />
+		<relation type="one" fk-name="productId" rel-entity-name="VvProduct">
+			<key-map field-name="productId" />
+		</relation>
+	</entity>
+	<!-- Csiszoló -->
+	<entity entity-name="FaseD" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseD Entity">
+		<!-- cikk szám -->
+		<field name="faseId" type="id"></field>
+		<field name="productId" type="id"></field>
+		<field name="worker" type="value"></field>
+		<field name="quantity" type="floating-point"></field>
+		<field name="scrap" type="floating-point"></field>
+		<field name="date" type="date-time"></field>
+		<!-- műszak -->
+		<field name="shift" type="value"></field>
+		<field name="sn" type="value"></field>
+<!-- 		<field name="wageCode" type="value"></field> -->
+		<prim-key field="faseId" />
+		<relation type="one" fk-name="productId" rel-entity-name="VvProduct">
+			<key-map field-name="productId" />
+		</relation>
+	</entity>
+	
+	<!-- Forgacsoló -->
+	<entity entity-name="FaseE" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseE Entity">
+		<!-- cikk szám -->
+		<field name="faseId" type="id"></field>
+		<field name="productId" type="id"></field>
+		<field name="worker" type="value"></field>
+		<field name="quantity" type="floating-point"></field>
+		<field name="scrap" type="floating-point"></field>
+		<field name="date" type="date-time"></field>
+		<!-- műszak -->
+		<field name="shift" type="value"></field>
+		<field name="sn" type="value"></field>
+<!-- 		<field name="wageCode" type="value"></field> -->
+		<prim-key field="faseId" />
+		<relation type="one" fk-name="productId" rel-entity-name="VvProduct">
+			<key-map field-name="productId" />
+		</relation>
+	</entity>
+	
+		<!-- Csomagoló -->
+	<entity entity-name="FaseF" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseF Entity">
+		<!-- cikk szám -->
+		<field name="faseId" type="id"></field>
+		<field name="productId" type="id"></field>
+		<field name="worker" type="value"></field>
+		<field name="quantity" type="floating-point"></field>
+		<field name="scrap" type="floating-point"></field>
+		<field name="date" type="date-time"></field>
+		<!-- műszak -->
+		<field name="shift" type="value"></field>
+		<field name="sn" type="value"></field>
+<!-- 		<field name="wageCode" type="value"></field> -->
+		<prim-key field="faseId" />
+		<relation type="one" fk-name="productId" rel-entity-name="VvProduct">
+			<key-map field-name="productId" />
+		</relation>
+	</entity>
+	
+	
 
 </entitymodel>

@@ -42,6 +42,18 @@
 			</condition>
 			<link target="findVvFaseDs" />
 		</menu-item>
+		<menu-item name="findVvFaseEs" title="${uiLabelMap.VvFaseEs}">
+			<condition>
+				<if-has-permission permission="VVORDER" action="_VIEW" />
+			</condition>
+			<link target="findVvFaseEs" />
+		</menu-item>
+		<menu-item name="findVvFaseFs" title="${uiLabelMap.VvFaseFs}">
+			<condition>
+				<if-has-permission permission="VVORDER" action="_VIEW" />
+			</condition>
+			<link target="findVvFaseFs" />
+		</menu-item>
 		<menu-item name="findVvReports" title="${uiLabelMap.VvReports}">
 			<condition>
 				<if-has-permission permission="VVORDER" action="_VIEW" />
