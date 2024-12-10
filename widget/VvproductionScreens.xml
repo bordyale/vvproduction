@@ -35,11 +35,11 @@ under the License.
         </section>
     </screen>
     
-    <screen name="FindFaseA">
+    <screen name="FindFaseAs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseA" />
-				<set field="headerItem" value="findFaseA" />
+				<set field="headerItem" value="findFaseAs" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseA';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -74,11 +74,11 @@ under the License.
 			</widgets>
 		</section>
 	</screen>
-	 <screen name="FindFaseB">
+	 <screen name="FindFaseBs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseB" />
-				<set field="headerItem" value="findFaseB" />
+				<set field="headerItem" value="findFaseBs" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseB';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -113,11 +113,11 @@ under the License.
 			</widgets>
 		</section>
 	</screen>
-	 <screen name="FindFaseC">
+	 <screen name="FindFaseCs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseC" />
-				<set field="headerItem" value="findFaseC" />
+				<set field="headerItem" value="findFaseCs" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseC';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -152,11 +152,11 @@ under the License.
 			</widgets>
 		</section>
 	</screen>
-	 <screen name="FindFaseD">
+	 <screen name="FindFaseDs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseD" />
-				<set field="headerItem" value="findFaseD" />
+				<set field="headerItem" value="findFaseDs" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseD';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -191,11 +191,11 @@ under the License.
 			</widgets>
 		</section>
 	</screen>
-	 <screen name="FindFaseE">
+	 <screen name="FindFaseEs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseE" />
-				<set field="headerItem" value="findFaseE" />
+				<set field="headerItem" value="findFaseEs" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseE';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -230,11 +230,11 @@ under the License.
 			</widgets>
 		</section>
 	</screen>
-	<screen name="FindFaseF">
+	<screen name="FindFaseFs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseF" />
-				<set field="headerItem" value="findFaseF" />
+				<set field="headerItem" value="findFaseFs" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseF';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->

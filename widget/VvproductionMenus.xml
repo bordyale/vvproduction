@@ -12,47 +12,47 @@
 		<menu-item name="main" title="${uiLabelMap.CommonMain}">
 			<link target="main" />
 		</menu-item>
-		<menu-item name="findVvFaseAs" title="${uiLabelMap.VvFaseAs}">
+		<menu-item name="findFaseAs" title="${uiLabelMap.FaseAs}">
 			<condition>
 				<if-has-permission permission="VVORDER" action="_VIEW" />
 			</condition>
-			<link target="findVvFaseAs" />
+			<link target="findFaseAs" />
 		</menu-item>
-		<menu-item name="findVvFaseBs" title="${uiLabelMap.VvFaseBs}">
+		<menu-item name="findFaseBs" title="${uiLabelMap.FaseBs}">
 			<condition>
 				<if-has-permission permission="VVORDER" action="_VIEW" />
 			</condition>
-			<link target="findVvFaseBs" />
+			<link target="findFaseBs" />
 		</menu-item>
-		<menu-item name="findVvFaseCs" title="${uiLabelMap.VvFaseCs}">
+		<menu-item name="findFaseCs" title="${uiLabelMap.FaseCs}">
 			<condition>
 				<if-has-permission permission="VVORDER" action="_VIEW" />
 			</condition>
-			<link target="findVvFaseCs" />
+			<link target="findFaseCs" />
 		</menu-item>
-		<menu-item name="findVvFaseCs" title="${uiLabelMap.VvFaseCs}">
+		<menu-item name="findFaseCs" title="${uiLabelMap.FaseCs}">
 			<condition>
 				<if-has-permission permission="VVORDER" action="_VIEW" />
 			</condition>
-			<link target="findVvFaseCs" />
+			<link target="findFaseCs" />
 		</menu-item>
-		<menu-item name="findVvFaseDs" title="${uiLabelMap.VvFaseDs}">
+		<menu-item name="findFaseDs" title="${uiLabelMap.FaseDs}">
 			<condition>
 				<if-has-permission permission="VVORDER" action="_VIEW" />
 			</condition>
-			<link target="findVvFaseDs" />
+			<link target="findFaseDs" />
 		</menu-item>
-		<menu-item name="findVvFaseEs" title="${uiLabelMap.VvFaseEs}">
+		<menu-item name="findFaseEs" title="${uiLabelMap.FaseEs}">
 			<condition>
 				<if-has-permission permission="VVORDER" action="_VIEW" />
 			</condition>
-			<link target="findVvFaseEs" />
+			<link target="findFaseEs" />
 		</menu-item>
-		<menu-item name="findVvFaseFs" title="${uiLabelMap.VvFaseFs}">
+		<menu-item name="findFaseFs" title="${uiLabelMap.FaseFs}">
 			<condition>
 				<if-has-permission permission="VVORDER" action="_VIEW" />
 			</condition>
-			<link target="findVvFaseFs" />
+			<link target="findFaseFs" />
 		</menu-item>
 		<menu-item name="findVvReports" title="${uiLabelMap.VvReports}">
 			<condition>

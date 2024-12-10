@@ -11,7 +11,7 @@
 
 	<form name="LookupProduct" target="LookupProduct" type="single" header-row-style="header-row" default-table-style="basic-table">
 		<!--<auto-fields-entity entity-name="PartyNameView" default-field-type="find"/> -->
-		<field name="prodId" title="${uiLabelMap.GeneralId}">
+		<field name="productId" title="${uiLabelMap.GeneralId}">
 			<text-find />
 		</field>
 		<field name="name" title="${uiLabelMap.Name}">
@@ -32,13 +32,51 @@
 		<actions>
 			<service service-name="performFind" result-map="result" result-map-list="listIt">
 				<field-map field-name="inputFields" from-field="parameters" />
-				<field-map field-name="entityName" value="BfinProduct" />
+				<field-map field-name="entityName" value="VvProduct" />
 			</service>
 
 		</actions>
 		<!--<auto-fields-entity entity-name="PartyNameView" default-field-type="display"/> -->
 		<field name="productId" title="${uiLabelMap.productId}" widget-style="smallSubmit">
 			<hyperlink description="${productId}" target="javascript:set_value('${productId}')" also-hidden="false"
+				target-type="plain" />
+		</field>
+
+		<field name="name" title="${uiLabelMap.Name}">
+			<display />
+		</field>
+
+	</form>
+	<form name="LookupPartner" target="LookupPartner" type="single" header-row-style="header-row" default-table-style="basic-table">
+		<!--<auto-fields-entity entity-name="PartyNameView" default-field-type="find"/> -->
+		<field name="partnerId" title="${uiLabelMap.GeneralId}">
+			<text-find />
+		</field>
+		<field name="name" title="${uiLabelMap.Name}">
+			<text-find />
+		</field>
+		<field name="noConditionFind">
+			<hidden value="Y" /><!-- if this isn't there then with all fields empty no query will be done -->
+		</field>
+		<field name="submitButton" title="${uiLabelMap.CommonFind}">
+			<submit button-type="button" />
+		</field>
+	</form>
+
+	<form name="ListLookupPartner" type="list" list-name="listIt" paginate-target="LookupContractor" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar">
+		<!-- <actions> <set field="inputFields" from-field="parameters"/> <set field="orderBy" value="contractorId"/> <set field="entityName" 
+			value="BorContractor"/> <script location="component://party/groovyScripts/party/FindLookUp.groovy"/> </actions> -->
+		<actions>
+			<service service-name="performFind" result-map="result" result-map-list="listIt">
+				<field-map field-name="inputFields" from-field="parameters" />
+				<field-map field-name="entityName" value="VvPartner" />
+			</service>
+
+		</actions>
+		<!--<auto-fields-entity entity-name="PartyNameView" default-field-type="display"/> -->
+		<field name="partnerId" title="${uiLabelMap.partnerId}" widget-style="smallSubmit">
+			<hyperlink description="${partnerId}" target="javascript:set_value('${partnerId}')" also-hidden="false"
 				target-type="plain" />
 		</field>
 
