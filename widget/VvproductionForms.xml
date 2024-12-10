@@ -23,17 +23,18 @@
 		<field name="productId" title="${uiLabelMap.VvProductId}">
 			<lookup target-form-name="LookupProduct" position="center" />
 		</field>
-		
-		<field name="name" title="${uiLabelMap.VvName}">
-			<text size="50" maxlength="50" />
-		</field>
 		<field name="date" title="${uiLabelMap.VvDate}">
 			<date-time />
 		</field>
 		<field name="shift" title="${uiLabelMap.VvShift}">
-			<text size="50" maxlength="50" />
+			<drop-down allow-empty="true">
+				<entity-options entity-name="Enumeration" key-field-name="enumId" description="${description}">
+					<entity-constraint name="enumTypeId" value="VV_SHIFT_TYPE" />
+					<entity-order-by field-name="sequenceId" />
+				</entity-options>
+			</drop-down>
 		</field>
-		<field name="ns" title="${uiLabelMap.VvSn}">
+		<field name="sn" title="${uiLabelMap.VvSn}">
 			<text size="50" maxlength="50" />
 		</field>
 		<field name="quantity" title="${uiLabelMap.VvQuantity}">
@@ -74,20 +75,30 @@
 			</service>
 		</actions>
 		<field name="faseId" title="${uiLabelMap.GeneralId}" widget-style="buttontext" sort-field="true">
-			<hyperlink description="${productId}" target="EditVvProduct" also-hidden="false">
-				<parameter param-name="productId" />
+			<hyperlink description="${faseId}" target="EditFaseA" also-hidden="false">
+				<parameter param-name="faseId" />
 			</hyperlink>
 		</field>
-		<field name="productId" title="${uiLabelMap.VvName}" widget-style="buttontext" sort-field="true">
+		<field name="productId" title="${uiLabelMap.VvProductName}" widget-style="buttontext" sort-field="true">
 			<display />
 		</field>
-		<field name="quantity" title="${uiLabelMap.VvName}" widget-style="buttontext" sort-field="true">
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<display />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<display />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<display />
+		</field>
+		
+		<field name="quantity" title="${uiLabelMap.VvQuantity}" widget-style="buttontext" sort-field="true">
 			<display />
 		</field>
 		<field name="deleteLink" title=" " widget-style="buttontext">
 			<hyperlink description="${uiLabelMap.CommonDelete}" target="deleteFaseA" also-hidden="false"
 				confirmation-message="${uiLabelMap.CommonConfirmDelete}" image-location="${iconsLocation}/delete.png">
-				<parameter param-name="productId" />
+				<parameter param-name="faseId" />
 			</hyperlink>
 		</field>
 	</form>

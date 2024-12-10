@@ -74,6 +74,29 @@ under the License.
 			</widgets>
 		</section>
 	</screen>
+	<screen name="EditFaseA">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseA" />
+				<set field="headerItem" value="findFaseAs" />
+				<set field="faseId" from-field="parameters.faseId" />
+				<!-- <set field="workpapersId" from-field="parameters.workpapersId" /> -->
+				<entity-one entity-name="FaseA" value-field="FaseA" />
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+
+						<screenlet title="${uiLabelMap.EditFaseA}">
+							<include-form name="EditFaseA" location="component://vvproduction/widget/VvproductionForms.xml" />
+						</screenlet>
+
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	
 	 <screen name="FindFaseBs">
 		<section>
 			<actions>
