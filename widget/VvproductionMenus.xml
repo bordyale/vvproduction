@@ -14,49 +14,49 @@
 		</menu-item>
 		<menu-item name="findFaseAs" title="${uiLabelMap.FaseAs}">
 			<condition>
-				<if-has-permission permission="VVORDER" action="_VIEW" />
+				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
 			<link target="findFaseAs" />
 		</menu-item>
 		<menu-item name="findFaseBs" title="${uiLabelMap.FaseBs}">
 			<condition>
-				<if-has-permission permission="VVORDER" action="_VIEW" />
+				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
 			<link target="findFaseBs" />
 		</menu-item>
 		<menu-item name="findFaseCs" title="${uiLabelMap.FaseCs}">
 			<condition>
-				<if-has-permission permission="VVORDER" action="_VIEW" />
+				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
 			<link target="findFaseCs" />
 		</menu-item>
 		<menu-item name="findFaseCs" title="${uiLabelMap.FaseCs}">
 			<condition>
-				<if-has-permission permission="VVORDER" action="_VIEW" />
+				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
 			<link target="findFaseCs" />
 		</menu-item>
 		<menu-item name="findFaseDs" title="${uiLabelMap.FaseDs}">
 			<condition>
-				<if-has-permission permission="VVORDER" action="_VIEW" />
+				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
 			<link target="findFaseDs" />
 		</menu-item>
 		<menu-item name="findFaseEs" title="${uiLabelMap.FaseEs}">
 			<condition>
-				<if-has-permission permission="VVORDER" action="_VIEW" />
+				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
 			<link target="findFaseEs" />
 		</menu-item>
 		<menu-item name="findFaseFs" title="${uiLabelMap.FaseFs}">
 			<condition>
-				<if-has-permission permission="VVORDER" action="_VIEW" />
+				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
 			<link target="findFaseFs" />
 		</menu-item>
 		<menu-item name="findVvReports" title="${uiLabelMap.VvReports}">
 			<condition>
-				<if-has-permission permission="VVORDER" action="_VIEW" />
+				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
 			<link target="findVvReports" />
 		</menu-item>
