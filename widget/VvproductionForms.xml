@@ -14,7 +14,7 @@
 	<form name="EditFaseA" type="single" target="updateFaseA" title="" default-map-name="FaseA" default-entity-name="FaseA">
 		<alt-target use-when="FaseA==null" target="createFaseA" />
 		<!-- <auto-fields-service service-name="updateShipment"/> -->
-		<field use-when="FaseA!=null" name="faseId" title="${uiLabelMap.PartnerId}">
+		<field use-when="FaseA!=null" name="faseId" title="${uiLabelMap.GeneralId}">
 			<display />
 		</field>
 		<field use-when="FaseA==null @and faseId==null" name="faseId" title="${uiLabelMap.GeneralId}">
@@ -80,7 +80,7 @@
 			</hyperlink>
 		</field>
 		<field name="productId" title="${uiLabelMap.VvProductName}" widget-style="buttontext" sort-field="true">
-			<display />
+			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}"/>
 		</field>
 		<field name="date" title="${uiLabelMap.VvDate}">
 			<display />

@@ -106,4 +106,12 @@ under the License.
         <value xml:lang="en">Find Production</value>
         <value xml:lang="hu">Termelés keresése</value>
     </property>
+    <property key="EditFaseA">
+        <value xml:lang="en">Edit Production</value>
+        <value xml:lang="hu">Termelés módósítása</value>
+    </property>
+    <property key="VvProductName">
+        <value xml:lang="en">Product Name</value>
+        <value xml:lang="hu">Termék</value>
+    </property>
 </resource>
