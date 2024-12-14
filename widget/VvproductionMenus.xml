@@ -9,9 +9,9 @@
 <menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ofbiz.apache.org/Widget-Menu"
 	xsi:schemaLocation="http://ofbiz.apache.org/Widget-Menu http://ofbiz.apache.org/dtds/widget-menu.xsd">
 	<menu name="MainAppBar" title="${uiLabelMap.VvproductionApplication}" extends="CommonAppBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
-		<menu-item name="main" title="${uiLabelMap.CommonMain}">
+		<!-- <menu-item name="main" title="${uiLabelMap.CommonMain}">
 			<link target="main" />
-		</menu-item>
+		</menu-item> -->
 		<menu-item name="findFaseAs" title="${uiLabelMap.FaseAs}">
 			<condition>
 				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />

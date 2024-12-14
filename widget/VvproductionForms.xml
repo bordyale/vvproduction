@@ -24,7 +24,7 @@
 			<lookup target-form-name="LookupProduct" position="center" />
 		</field>
 		<field name="date" title="${uiLabelMap.VvDate}">
-			<date-time />
+			<date-time type="date"/>
 		</field>
 		<field name="shift" title="${uiLabelMap.VvShift}">
 			<drop-down allow-empty="true">
@@ -83,7 +83,7 @@
 			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}"/>
 		</field>
 		<field name="date" title="${uiLabelMap.VvDate}">
-			<display />
+			<display type="date"/>
 		</field>
 		<field name="shift" title="${uiLabelMap.VvShift}">
 			<display />
