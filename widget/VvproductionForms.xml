@@ -28,7 +28,7 @@
 		</field>
 		<field name="shift" title="${uiLabelMap.VvShift}">
 			<drop-down allow-empty="true">
-				<entity-options entity-name="Enumeration" key-field-name="enumId" description="${description}">
+				<entity-options entity-name="VvEnumeration" key-field-name="enumId" description="${description}">
 					<entity-constraint name="enumTypeId" value="VV_SHIFT_TYPE" />
 					<entity-order-by field-name="sequenceId" />
 				</entity-options>
