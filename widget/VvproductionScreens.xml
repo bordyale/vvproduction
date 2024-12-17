@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
-distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
-to you under the Apache License, Version 2.0 (the
-"License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed 
+	with this work for additional information regarding copyright ownership. The ASF licenses this file to you under the Apache License, 
+	Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License 
+	at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under 
+	the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License 
+	for the specific language governing permissions and limitations under the License. -->
 
-http://www.apache.org/licenses/LICENSE-2.0
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ofbiz.apache.org/Widget-Screen"
+	xsi:schemaLocation="http://ofbiz.apache.org/Widget-Screen http://ofbiz.apache.org/dtds/widget-screen.xsd">
 
-Unless required by applicable law or agreed to in writing,
-software distributed under the License is distributed on an
-"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
-specific language governing permissions and limitations
-under the License.
--->
+	<screen name="main">
+		<section>
+			<actions>
+				<set field="headerItem" value="main" /><!-- this highlights the selected menu-item with name "main" -->
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
 
-<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="http://ofbiz.apache.org/Widget-Screen" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Screen http://ofbiz.apache.org/dtds/widget-screen.xsd">
-
-    <screen name="main">
-        <section>
-            <actions>
-                <set field="headerItem" value="main"/><!-- this highlights the selected menu-item with name "main" -->
-            </actions>
-            <widgets>
-                <decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
-                    <decorator-section name="body">
-                    </decorator-section>
-                </decorator-screen>
-            </widgets>
-        </section>
-    </screen>
-    
-    <screen name="FindFaseAs">
+	<screen name="FindFaseAs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseA" />
 				<set field="headerItem" value="findFaseAs" />
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate1FromTitle" value="${groovy: uiLabelMap.From}" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
+				<set field="filshowFaseA" from-field="parameters.filshowFaseA" />
+				<set field="faseAPage" value="Y" />
+				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="200" />
+				<script location="component://vvproduction/groovyScripts/FaseA.groovy" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseA';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -50,6 +51,16 @@ under the License.
 			<widgets>
 				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
 					<decorator-section name="body">
+						<container style="button-bar">
+							<link target="VvFaseAExport.csv" text="${uiLabelMap.CommonExport}" style="buttontext create" target-window="_blank">
+								<parameter param-name="filproductId" />
+								<parameter param-name="fildate1From" />
+								<parameter param-name="fildate2From" />
+								<parameter param-name="filshowFaseA" />
+							</link>
+							<!-- <link target="ReportExportPdf" text="${uiLabelMap.CommonPdf}" style="buttontext create" target-window="_blank"> <parameter 
+								param-name="filshowClientNotes" /> <parameter param-name="filshowClientInfos" /> </link> -->
+						</container>
 						<section>
 							<widgets>
 								<container style="h2">
@@ -60,7 +71,7 @@ under the License.
 								</container>
 								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
 									<decorator-section name="search-options">
-										<include-form name="FindFaseA" location="component://vvproduction/widget/VvproductionForms.xml" />
+										<include-form name="FilterGeneral" location="component://vvproduction/widget/VvproductionForms.xml" />
 									</decorator-section>
 									<decorator-section name="search-results">
 										<include-form name="ListFaseA" location="component://vvproduction/widget/VvproductionForms.xml" />
@@ -80,8 +91,11 @@ under the License.
 				<set field="titleProperty" value="FindFaseA" />
 				<set field="headerItem" value="findFaseAs" />
 				<set field="faseId" from-field="parameters.faseId" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
 				<!-- <set field="workpapersId" from-field="parameters.workpapersId" /> -->
-				<entity-one entity-name="FaseA" value-field="FaseA" />
+				<entity-one entity-name="VvFaseA" value-field="VvFaseA" />
 			</actions>
 			<widgets>
 				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
@@ -96,12 +110,25 @@ under the License.
 			</widgets>
 		</section>
 	</screen>
-	
-	 <screen name="FindFaseBs">
+
+	<screen name="FindFaseBs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseB" />
 				<set field="headerItem" value="findFaseBs" />
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate1FromTitle" value="${groovy: uiLabelMap.From}" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
+				<set field="filshowFaseB" from-field="parameters.filshowFaseB" />
+				<set field="faseBPage" value="Y" />
+				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="200" />
+				<script location="component://vvproduction/groovyScripts/FaseB.groovy" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseB';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -112,6 +139,16 @@ under the License.
 			<widgets>
 				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
 					<decorator-section name="body">
+						<container style="button-bar">
+							<link target="VvFaseBExport.csv" text="${uiLabelMap.CommonExport}" style="buttontext create" target-window="_blank">
+								<parameter param-name="filproductId" />
+								<parameter param-name="fildate1From" />
+								<parameter param-name="fildate2From" />
+								<parameter param-name="filshowFaseB" />
+							</link>
+							<!-- <link target="ReportExportPdf" text="${uiLabelMap.CommonPdf}" style="buttontext create" target-window="_blank"> <parameter 
+								param-name="filshowClientNotes" /> <parameter param-name="filshowClientInfos" /> </link> -->
+						</container>
 						<section>
 							<widgets>
 								<container style="h2">
@@ -122,7 +159,7 @@ under the License.
 								</container>
 								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
 									<decorator-section name="search-options">
-										<include-form name="FindFaseB" location="component://vvproduction/widget/VvproductionForms.xml" />
+										<include-form name="FilterGeneral" location="component://vvproduction/widget/VvproductionForms.xml" />
 									</decorator-section>
 									<decorator-section name="search-results">
 										<include-form name="ListFaseB" location="component://vvproduction/widget/VvproductionForms.xml" />
@@ -136,11 +173,53 @@ under the License.
 			</widgets>
 		</section>
 	</screen>
-	 <screen name="FindFaseCs">
+
+	<screen name="EditFaseB">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseB" />
+				<set field="headerItem" value="findFaseBs" />
+				<set field="faseId" from-field="parameters.faseId" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<!-- <set field="workpapersId" from-field="parameters.workpapersId" /> -->
+				<entity-one entity-name="VvFaseB" value-field="VvFaseB" />
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+
+						<screenlet title="${uiLabelMap.EditFaseB}">
+							<include-form name="EditFaseB" location="component://vvproduction/widget/VvproductionForms.xml" />
+						</screenlet>
+
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+
+
+
+	<screen name="FindFaseCs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseC" />
 				<set field="headerItem" value="findFaseCs" />
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate1FromTitle" value="${groovy: uiLabelMap.From}" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
+				<set field="filshowFaseC" from-field="parameters.filshowFaseC" />
+				<set field="faseCPage" value="Y" />
+				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="200" />
+				<script location="component://vvproduction/groovyScripts/FaseC.groovy" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseC';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -151,6 +230,16 @@ under the License.
 			<widgets>
 				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
 					<decorator-section name="body">
+						<container style="button-bar">
+							<link target="VvFaseCExport.csv" text="${uiLabelMap.CommonExport}" style="buttontext create" target-window="_blank">
+								<parameter param-name="filproductId" />
+								<parameter param-name="fildate1From" />
+								<parameter param-name="fildate2From" />
+								<parameter param-name="filshowFaseC" />
+							</link>
+							<!-- <link target="ReportExportPdf" text="${uiLabelMap.CommonPdf}" style="buttontext create" target-window="_blank"> <parameter 
+								param-name="filshowClientNotes" /> <parameter param-name="filshowClientInfos" /> </link> -->
+						</container>
 						<section>
 							<widgets>
 								<container style="h2">
@@ -161,7 +250,7 @@ under the License.
 								</container>
 								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
 									<decorator-section name="search-options">
-										<include-form name="FindFaseC" location="component://vvproduction/widget/VvproductionForms.xml" />
+										<include-form name="FilterGeneral" location="component://vvproduction/widget/VvproductionForms.xml" />
 									</decorator-section>
 									<decorator-section name="search-results">
 										<include-form name="ListFaseC" location="component://vvproduction/widget/VvproductionForms.xml" />
@@ -175,11 +264,52 @@ under the License.
 			</widgets>
 		</section>
 	</screen>
-	 <screen name="FindFaseDs">
+
+	<screen name="EditFaseC">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseC" />
+				<set field="headerItem" value="findFaseCs" />
+				<set field="faseId" from-field="parameters.faseId" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<!-- <set field="workpapersId" from-field="parameters.workpapersId" /> -->
+				<entity-one entity-name="VvFaseC" value-field="VvFaseC" />
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+
+						<screenlet title="${uiLabelMap.EditFaseC}">
+							<include-form name="EditFaseC" location="component://vvproduction/widget/VvproductionForms.xml" />
+						</screenlet>
+
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+
+
+	<screen name="FindFaseDs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseD" />
 				<set field="headerItem" value="findFaseDs" />
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate1FromTitle" value="${groovy: uiLabelMap.From}" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
+				<set field="filshowFaseD" from-field="parameters.filshowFaseD" />
+				<set field="faseDPage" value="Y" />
+				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="200" />
+				<script location="component://vvproduction/groovyScripts/FaseD.groovy" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseD';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -190,6 +320,16 @@ under the License.
 			<widgets>
 				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
 					<decorator-section name="body">
+						<container style="button-bar">
+							<link target="VvFaseDExport.csv" text="${uiLabelMap.CommonExport}" style="buttontext create" target-window="_blank">
+								<parameter param-name="filproductId" />
+								<parameter param-name="fildate1From" />
+								<parameter param-name="fildate2From" />
+								<parameter param-name="filshowFaseD" />
+							</link>
+							<!-- <link target="ReportExportPdf" text="${uiLabelMap.CommonPdf}" style="buttontext create" target-window="_blank"> <parameter 
+								param-name="filshowClientNotes" /> <parameter param-name="filshowClientInfos" /> </link> -->
+						</container>
 						<section>
 							<widgets>
 								<container style="h2">
@@ -200,7 +340,7 @@ under the License.
 								</container>
 								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
 									<decorator-section name="search-options">
-										<include-form name="FindFaseD" location="component://vvproduction/widget/VvproductionForms.xml" />
+										<include-form name="FilterGeneral" location="component://vvproduction/widget/VvproductionForms.xml" />
 									</decorator-section>
 									<decorator-section name="search-results">
 										<include-form name="ListFaseD" location="component://vvproduction/widget/VvproductionForms.xml" />
@@ -214,11 +354,49 @@ under the License.
 			</widgets>
 		</section>
 	</screen>
-	 <screen name="FindFaseEs">
+	<screen name="EditFaseD">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseD" />
+				<set field="headerItem" value="findFaseDs" />
+				<set field="faseId" from-field="parameters.faseId" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<!-- <set field="workpapersId" from-field="parameters.workpapersId" /> -->
+				<entity-one entity-name="VvFaseD" value-field="VvFaseD" />
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+
+						<screenlet title="${uiLabelMap.EditFaseD}">
+							<include-form name="EditFaseD" location="component://vvproduction/widget/VvproductionForms.xml" />
+						</screenlet>
+
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="FindFaseEs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseE" />
 				<set field="headerItem" value="findFaseEs" />
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate1FromTitle" value="${groovy: uiLabelMap.From}" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
+				<set field="filshowFaseE" from-field="parameters.filshowFaseE" />
+				<set field="faseEPage" value="Y" />
+				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="200" />
+				<script location="component://vvproduction/groovyScripts/FaseE.groovy" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseE';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -229,6 +407,16 @@ under the License.
 			<widgets>
 				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
 					<decorator-section name="body">
+						<container style="button-bar">
+							<link target="VvFaseEExport.csv" text="${uiLabelMap.CommonExport}" style="buttontext create" target-window="_blank">
+								<parameter param-name="filproductId" />
+								<parameter param-name="fildate1From" />
+								<parameter param-name="fildate2From" />
+								<parameter param-name="filshowFaseE" />
+							</link>
+							<!-- <link target="ReportExportPdf" text="${uiLabelMap.CommonPdf}" style="buttontext create" target-window="_blank"> <parameter 
+								param-name="filshowClientNotes" /> <parameter param-name="filshowClientInfos" /> </link> -->
+						</container>
 						<section>
 							<widgets>
 								<container style="h2">
@@ -239,7 +427,7 @@ under the License.
 								</container>
 								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
 									<decorator-section name="search-options">
-										<include-form name="FindFaseE" location="component://vvproduction/widget/VvproductionForms.xml" />
+										<include-form name="FilterGeneral" location="component://vvproduction/widget/VvproductionForms.xml" />
 									</decorator-section>
 									<decorator-section name="search-results">
 										<include-form name="ListFaseE" location="component://vvproduction/widget/VvproductionForms.xml" />
@@ -253,11 +441,49 @@ under the License.
 			</widgets>
 		</section>
 	</screen>
+	<screen name="EditFaseE">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseE" />
+				<set field="headerItem" value="findFaseEs" />
+				<set field="faseId" from-field="parameters.faseId" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<!-- <set field="workpapersId" from-field="parameters.workpapersId" /> -->
+				<entity-one entity-name="VvFaseE" value-field="VvFaseE" />
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+
+						<screenlet title="${uiLabelMap.EditFaseE}">
+							<include-form name="EditFaseE" location="component://vvproduction/widget/VvproductionForms.xml" />
+						</screenlet>
+
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
 	<screen name="FindFaseFs">
 		<section>
 			<actions>
 				<set field="titleProperty" value="FindFaseF" />
 				<set field="headerItem" value="findFaseFs" />
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate1FromTitle" value="${groovy: uiLabelMap.From}" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
+				<set field="filshowFaseF" from-field="parameters.filshowFaseF" />
+				<set field="faseFPage" value="Y" />
+				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="200" />
+				<script location="component://vvproduction/groovyScripts/FaseF.groovy" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseF';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -268,6 +494,16 @@ under the License.
 			<widgets>
 				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
 					<decorator-section name="body">
+						<container style="button-bar">
+							<link target="VvFaseFExport.csv" text="${uiLabelMap.CommonExport}" style="buttontext create" target-window="_blank">
+								<parameter param-name="filproductId" />
+								<parameter param-name="fildate1From" />
+								<parameter param-name="fildate2From" />
+								<parameter param-name="filshowFaseF" />
+							</link>
+							<!-- <link target="ReportExportPdf" text="${uiLabelMap.CommonPdf}" style="buttontext create" target-window="_blank"> <parameter 
+								param-name="filshowClientNotes" /> <parameter param-name="filshowClientInfos" /> </link> -->
+						</container>
 						<section>
 							<widgets>
 								<container style="h2">
@@ -278,7 +514,7 @@ under the License.
 								</container>
 								<decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
 									<decorator-section name="search-options">
-										<include-form name="FindFaseF" location="component://vvproduction/widget/VvproductionForms.xml" />
+										<include-form name="FilterGeneral" location="component://vvproduction/widget/VvproductionForms.xml" />
 									</decorator-section>
 									<decorator-section name="search-results">
 										<include-form name="ListFaseF" location="component://vvproduction/widget/VvproductionForms.xml" />
@@ -287,6 +523,31 @@ under the License.
 
 							</widgets>
 						</section>
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+	<screen name="EditFaseF">
+		<section>
+			<actions>
+				<set field="titleProperty" value="FindFaseF" />
+				<set field="headerItem" value="findFaseFs" />
+				<set field="faseId" from-field="parameters.faseId" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<!-- <set field="workpapersId" from-field="parameters.workpapersId" /> -->
+				<entity-one entity-name="VvFaseF" value-field="VvFaseF" />
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+
+						<screenlet title="${uiLabelMap.EditFaseF}">
+							<include-form name="EditFaseF" location="component://vvproduction/widget/VvproductionForms.xml" />
+						</screenlet>
+
 					</decorator-section>
 				</decorator-screen>
 			</widgets>

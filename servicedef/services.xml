@@ -30,7 +30,7 @@ under the License.
         </description>
     </service> 
     
-    <service name="createFaseA" default-entity-name="FaseA" engine="entity-auto" invoke="create" auth="true">
+    <service name="createFaseA" default-entity-name="VvFaseA" engine="entity-auto" invoke="create" auth="true">
 		<description>Create a FaseA</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="CREATE" />
 		<auto-attributes include="pk" mode="OUT" optional="false" />
@@ -38,19 +38,19 @@ under the License.
 		<override name="name" optional="false" />
 		<override name="weight" optional="false" />
 	</service>
-	<service name="updateFaseA" default-entity-name="FaseA" engine="entity-auto" invoke="update" auth="true">
+	<service name="updateFaseA" default-entity-name="VvFaseA" engine="entity-auto" invoke="update" auth="true">
 		<description>Update a FaseA</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="UPDATE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />
 		<auto-attributes include="nonpk" mode="IN" optional="true" />
 	</service>
-	<service name="deleteFaseA" default-entity-name="FaseA" engine="entity-auto" invoke="delete" auth="true">
+	<service name="deleteFaseA" default-entity-name="VvFaseA" engine="entity-auto" invoke="delete" auth="true">
 		<description>Delete a FaseA</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="DELETE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />
 	</service>
     
-    <service name="createFaseB" default-entity-name="FaseB" engine="entity-auto" invoke="create" auth="true">
+    <service name="createFaseB" default-entity-name="VvFaseB" engine="entity-auto" invoke="create" auth="true">
 		<description>Create a FaseB</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="CREATE" />
 		<auto-attributes include="pk" mode="OUT" optional="false" />
@@ -58,19 +58,19 @@ under the License.
 		<override name="name" optional="false" />
 		<override name="weight" optional="false" />
 	</service>
-	<service name="updateFaseB" default-entity-name="FaseB" engine="entity-auto" invoke="update" auth="true">
+	<service name="updateFaseB" default-entity-name="VvFaseB" engine="entity-auto" invoke="update" auth="true">
 		<description>Update a FaseB</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="UPDATE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />
 		<auto-attributes include="nonpk" mode="IN" optional="true" />
 	</service>
-	<service name="deleteFaseB" default-entity-name="FaseB" engine="entity-auto" invoke="delete" auth="true">
+	<service name="deleteFaseB" default-entity-name="VvFaseB" engine="entity-auto" invoke="delete" auth="true">
 		<description>Delete a FaseB</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="DELETE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />
 	</service>
 	
-	<service name="createFaseC" default-entity-name="FaseC" engine="entity-auto" invoke="create" auth="true">
+	<service name="createFaseC" default-entity-name="VvFaseC" engine="entity-auto" invoke="create" auth="true">
 		<description>Create a FaseC</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="CREATE" />
 		<auto-attributes include="pk" mode="OUT" optional="false" />
@@ -78,19 +78,19 @@ under the License.
 		<override name="name" optional="false" />
 		<override name="weight" optional="false" />
 	</service>
-	<service name="updateFaseC" default-entity-name="FaseC" engine="entity-auto" invoke="update" auth="true">
+	<service name="updateFaseC" default-entity-name="VvFaseC" engine="entity-auto" invoke="update" auth="true">
 		<description>Update a FaseC</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="UPDATE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />
 		<auto-attributes include="nonpk" mode="IN" optional="true" />
 	</service>
-	<service name="deleteFaseC" default-entity-name="FaseC" engine="entity-auto" invoke="delete" auth="true">
+	<service name="deleteFaseC" default-entity-name="VvFaseC" engine="entity-auto" invoke="delete" auth="true">
 		<description>Delete a FaseC</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="DELETE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />
 	</service>
 	
-	<service name="createFaseD" default-entity-name="FaseD" engine="entity-auto" invoke="create" auth="true">
+	<service name="createFaseD" default-entity-name="VvFaseD" engine="entity-auto" invoke="create" auth="true">
 		<description>Create a FaseD</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="CREATE" />
 		<auto-attributes include="pk" mode="OUT" optional="false" />
@@ -98,19 +98,19 @@ under the License.
 		<override name="name" optional="false" />
 		<override name="weight" optional="false" />
 	</service>
-	<service name="updateFaseD" default-entity-name="FaseD" engine="entity-auto" invoke="update" auth="true">
+	<service name="updateFaseD" default-entity-name="VvFaseD" engine="entity-auto" invoke="update" auth="true">
 		<description>Update a FaseD</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="UPDATE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />
 		<auto-attributes include="nonpk" mode="IN" optional="true" />
 	</service>
-	<service name="deleteFaseD" default-entity-name="FaseD" engine="entity-auto" invoke="delete" auth="true">
+	<service name="deleteFaseD" default-entity-name="VvFaseD" engine="entity-auto" invoke="delete" auth="true">
 		<description>Delete a FaseD</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="DELETE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />
 	</service>
     
-    <service name="createFaseE" default-entity-name="FaseE" engine="entity-auto" invoke="create" auth="true">
+    <service name="createFaseE" default-entity-name="VvFaseE" engine="entity-auto" invoke="create" auth="true">
 		<description>Create a FaseE</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="CREATE" />
 		<auto-attributes include="pk" mode="OUT" optional="false" />
@@ -118,19 +118,19 @@ under the License.
 		<override name="name" optional="false" />
 		<override name="weight" optional="false" />
 	</service>
-	<service name="updateFaseE" default-entity-name="FaseE" engine="entity-auto" invoke="update" auth="true">
+	<service name="updateFaseE" default-entity-name="VvFaseE" engine="entity-auto" invoke="update" auth="true">
 		<description>Update a FaseE</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="UPDATE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />
 		<auto-attributes include="nonpk" mode="IN" optional="true" />
 	</service>
-	<service name="deleteFaseE" default-entity-name="FaseE" engine="entity-auto" invoke="delete" auth="true">
+	<service name="deleteFaseE" default-entity-name="VvFaseE" engine="entity-auto" invoke="delete" auth="true">
 		<description>Delete a FaseE</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="DELETE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />
 	</service>
 	
-	<service name="createFaseF" default-entity-name="FaseF" engine="entity-auto" invoke="create" auth="true">
+	<service name="createFaseF" default-entity-name="VvFaseF" engine="entity-auto" invoke="create" auth="true">
 		<description>Create a FaseF</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="CREATE" />
 		<auto-attributes include="pk" mode="OUT" optional="false" />
@@ -138,13 +138,13 @@ under the License.
 		<override name="name" optional="false" />
 		<override name="weight" optional="false" />
 	</service>
-	<service name="updateFaseF" default-entity-name="FaseF" engine="entity-auto" invoke="update" auth="true">
+	<service name="updateFaseF" default-entity-name="VvFaseF" engine="entity-auto" invoke="update" auth="true">
 		<description>Update a FaseF</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="UPDATE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />
 		<auto-attributes include="nonpk" mode="IN" optional="true" />
 	</service>
-	<service name="deleteFaseF" default-entity-name="FaseF" engine="entity-auto" invoke="delete" auth="true">
+	<service name="deleteFaseF" default-entity-name="VvFaseF" engine="entity-auto" invoke="delete" auth="true">
 		<description>Delete a FaseF</description>
 		<permission-service service-name="vvproductionGenericPermission" main-action="DELETE" />
 		<auto-attributes include="pk" mode="IN" optional="false" />

@@ -212,11 +212,37 @@
 		<response name="success" type="view" value="main" />
 	</request-map>
 
+
+	<request-map uri="VvFaseAExport.csv">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="FaseAExport" />
+	</request-map>
+	<request-map uri="VvFaseBExport.csv">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="FaseBExport" />
+	</request-map>
+	<request-map uri="VvFaseCExport.csv">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="FaseCExport" />
+	</request-map>
+	<request-map uri="VvFaseDExport.csv">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="FaseDExport" />
+	</request-map>
+	<request-map uri="VvFaseEExport.csv">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="FaseEExport" />
+	</request-map>
+	<request-map uri="VvFaseFExport.csv">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="FaseFExport" />
+	</request-map>
+
 	<!-- View Mappings -->
 	<view-map name="main" type="screen" page="component://vvproduction/widget/VvproductionScreens.xml#main" />
 
-	<!-- <view-map name="findFaseAs" type="screen" page="component://vvproduction/widget/VvproductionScreens.xml#FindFaseAs" />
-	<view-map name="EditFaseA" type="screen" page="component://vvproduction/widget/VvproductionScreens.xml#EditFaseA" /> -->
+	<!-- <view-map name="findFaseAs" type="screen" page="component://vvproduction/widget/VvproductionScreens.xml#FindFaseAs" /> <view-map 
+		name="EditFaseA" type="screen" page="component://vvproduction/widget/VvproductionScreens.xml#EditFaseA" /> -->
 
 	<view-map name="findFaseAs" type="screen" page="component://vvproduction/widget/VvproductionScreens.xml#FindFaseAs" />
 	<view-map name="EditFaseA" type="screen" page="component://vvproduction/widget/VvproductionScreens.xml#EditFaseA" />
@@ -234,5 +260,18 @@
 	<view-map name="LookupProduct" type="screen" page="component://vvproduction/widget/LookupScreens.xml#LookupProduct" />
 	<view-map name="LookupPartner" type="screen" page="component://vvproduction/widget/LookupScreens.xml#LookupPartner" />
 
+
+	<view-map name="FaseAExport" type="screencsv" page="component://vvproduction/widget/CsvScreens.xml#FaseAExport"
+		content-type="text/csv" encoding="none" />
+	<view-map name="FaseBExport" type="screencsv" page="component://vvproduction/widget/CsvScreens.xml#FaseBExport"
+		content-type="text/csv" encoding="none" />
+	<view-map name="FaseCExport" type="screencsv" page="component://vvproduction/widget/CsvScreens.xml#FaseCExport"
+		content-type="text/csv" encoding="none" />
+	<view-map name="FaseDExport" type="screencsv" page="component://vvproduction/widget/CsvScreens.xml#FaseDExport"
+		content-type="text/csv" encoding="none" />
+	<view-map name="FaseEExport" type="screencsv" page="component://vvproduction/widget/CsvScreens.xml#FaseEExport"
+		content-type="text/csv" encoding="none" />
+	<view-map name="FaseFExport" type="screencsv" page="component://vvproduction/widget/CsvScreens.xml#FaseFExport"
+		content-type="text/csv" encoding="none" />
 
 </site-conf>

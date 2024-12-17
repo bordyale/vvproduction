@@ -9,50 +9,85 @@
 <menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ofbiz.apache.org/Widget-Menu"
 	xsi:schemaLocation="http://ofbiz.apache.org/Widget-Menu http://ofbiz.apache.org/dtds/widget-menu.xsd">
 	<menu name="MainAppBar" title="${uiLabelMap.VvproductionApplication}" extends="CommonAppBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
-		<!-- <menu-item name="main" title="${uiLabelMap.CommonMain}">
-			<link target="main" />
-		</menu-item> -->
+		<!-- <menu-item name="main" title="${uiLabelMap.CommonMain}"> <link target="main" /> </menu-item> -->
 		<menu-item name="findFaseAs" title="${uiLabelMap.FaseAs}">
 			<condition>
 				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
-			<link target="findFaseAs" />
+			<link target="findFaseAs">
+				<parameter param-name="fildate1From"
+					value="${groovy: org.apache.ofbiz.base.util.UtilDateTime.addDaysToTimestamp(org.apache.ofbiz.base.util.UtilDateTime.nowTimestamp(), -1)}" />
+				<parameter param-name="filshowFaseA" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</link>
 		</menu-item>
 		<menu-item name="findFaseBs" title="${uiLabelMap.FaseBs}">
 			<condition>
 				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
-			<link target="findFaseBs" />
+			<link target="findFaseBs">
+				<parameter param-name="fildate1From"
+					value="${groovy: org.apache.ofbiz.base.util.UtilDateTime.addDaysToTimestamp(org.apache.ofbiz.base.util.UtilDateTime.nowTimestamp(), -1)}" />
+				<parameter param-name="filshowFaseB" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</link>
 		</menu-item>
 		<menu-item name="findFaseCs" title="${uiLabelMap.FaseCs}">
 			<condition>
 				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
-			<link target="findFaseCs" />
-		</menu-item>
-		<menu-item name="findFaseCs" title="${uiLabelMap.FaseCs}">
-			<condition>
-				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
-			</condition>
-			<link target="findFaseCs" />
+			<link target="findFaseCs">
+				<parameter param-name="fildate1From"
+					value="${groovy: org.apache.ofbiz.base.util.UtilDateTime.addDaysToTimestamp(org.apache.ofbiz.base.util.UtilDateTime.nowTimestamp(), -1)}" />
+				<parameter param-name="filshowFaseC" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</link>
 		</menu-item>
 		<menu-item name="findFaseDs" title="${uiLabelMap.FaseDs}">
 			<condition>
 				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
-			<link target="findFaseDs" />
+			<link target="findFaseDs">
+				<parameter param-name="fildate1From"
+					value="${groovy: org.apache.ofbiz.base.util.UtilDateTime.addDaysToTimestamp(org.apache.ofbiz.base.util.UtilDateTime.nowTimestamp(), -1)}" />
+				<parameter param-name="filshowFaseD" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</link>
+
 		</menu-item>
 		<menu-item name="findFaseEs" title="${uiLabelMap.FaseEs}">
 			<condition>
 				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
-			<link target="findFaseEs" />
+			<link target="findFaseEs">
+				<parameter param-name="fildate1From"
+					value="${groovy: org.apache.ofbiz.base.util.UtilDateTime.addDaysToTimestamp(org.apache.ofbiz.base.util.UtilDateTime.nowTimestamp(), -1)}" />
+				<parameter param-name="filshowFaseE" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</link>
 		</menu-item>
 		<menu-item name="findFaseFs" title="${uiLabelMap.FaseFs}">
 			<condition>
 				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
-			<link target="findFaseFs" />
+			<link target="findFaseFs">
+				<parameter param-name="fildate1From"
+					value="${groovy: org.apache.ofbiz.base.util.UtilDateTime.addDaysToTimestamp(org.apache.ofbiz.base.util.UtilDateTime.nowTimestamp(), -1)}" />
+				<parameter param-name="filshowFaseF" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</link>
 		</menu-item>
 		<menu-item name="findVvReports" title="${uiLabelMap.VvReports}">
 			<condition>

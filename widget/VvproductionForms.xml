@@ -11,20 +11,20 @@
 
 
 
-	<form name="EditFaseA" type="single" target="updateFaseA" title="" default-map-name="FaseA" default-entity-name="FaseA">
-		<alt-target use-when="FaseA==null" target="createFaseA" />
+	<form name="EditFaseA" type="single" target="updateFaseA" title="" default-map-name="VvFaseA" default-entity-name="FaseA">
+		<alt-target use-when="VvFaseA==null" target="createFaseA" />
 		<!-- <auto-fields-service service-name="updateShipment"/> -->
-		<field use-when="FaseA!=null" name="faseId" title="${uiLabelMap.GeneralId}">
+		<field use-when="VvFaseA!=null" name="faseId" title="${uiLabelMap.GeneralId}">
 			<display />
 		</field>
-		<field use-when="FaseA==null @and faseId==null" name="faseId" title="${uiLabelMap.GeneralId}">
+		<field use-when="VvFaseA==null @and faseId==null" name="faseId" title="${uiLabelMap.GeneralId}">
 			<ignored />
 		</field>
 		<field name="productId" title="${uiLabelMap.VvProductId}">
 			<lookup target-form-name="LookupProduct" position="center" />
 		</field>
 		<field name="date" title="${uiLabelMap.VvDate}">
-			<date-time type="date"/>
+			<date-time type="date" />
 		</field>
 		<field name="shift" title="${uiLabelMap.VvShift}">
 			<drop-down allow-empty="true">
@@ -40,67 +40,467 @@
 		<field name="quantity" title="${uiLabelMap.VvQuantity}">
 			<text size="5" maxlength="10" />
 		</field>
-		<field name="submitButton" use-when="FaseA==null" title="${uiLabelMap.CommonCreate}">
-			<submit button-type="button" />
-		</field>
-		<field name="submitButton" use-when="FaseA!=null" title="${uiLabelMap.CommonUpdate}">
-			<submit button-type="button" />
-		</field>
-	</form>
-
-	<form name="FindFaseA" type="single" target="findFaseAs" default-entity-name="FaseA">
-		<field name="noConditionFind">
-			<hidden value="Y" /><!-- if this isn't there then with all fields empty no query will be done -->
-		</field>
-		<field name="name" title="${uiLabelMap.VvName}">
-			<text-find />
-		</field>
-		<field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit">
-			<submit button-type="button" />
-		</field>
-	</form>
-	
-	<form name="ListFaseA" list-name="list" target="" title="" type="list" paginate-target="findFaseAs" odd-row-style="alternate-row"
-		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true">
-
-		<actions>
-			<set field="requestParameters.noConditionFind" value="Y" />
-			<set field="entityName" value="FaseA" />
-			<service service-name="performFindList" result-map="result" result-map-list="list">
-				<field-map field-name="inputFields" from-field="requestParameters" />
-				<field-map field-name="entityName" from-field="entityName" />
-				<field-map field-name="orderBy" from-field="parameters.sortField" />
-				<field-map field-name="viewIndex" from-field="viewIndex" />
-				<field-map field-name="viewSize" from-field="viewSize" />
-			</service>
-		</actions>
-		<field name="faseId" title="${uiLabelMap.GeneralId}" widget-style="buttontext" sort-field="true">
-			<hyperlink description="${faseId}" target="EditFaseA" also-hidden="false">
-				<parameter param-name="faseId" />
-			</hyperlink>
-		</field>
-		<field name="productId" title="${uiLabelMap.VvProductName}" widget-style="buttontext" sort-field="true">
-			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}"/>
-		</field>
-		<field name="date" title="${uiLabelMap.VvDate}">
-			<display type="date"/>
-		</field>
-		<field name="shift" title="${uiLabelMap.VvShift}">
-			<display />
-		</field>
-		<field name="sn" title="${uiLabelMap.VvSn}">
-			<display />
-		</field>
 		
-		<field name="quantity" title="${uiLabelMap.VvQuantity}" widget-style="buttontext" sort-field="true">
-			<display />
+		<field name="filshowFaseA">
+			<hidden value="Y" />
 		</field>
+		<field name="filproductId">
+			<hidden value="${filproductId}" />
+		</field>
+
+		<field name="fildate1From">
+			<hidden value="${fildate1From}" />
+		</field>
+		<field name="fildate2From">
+			<hidden value="${fildate2From}" />
+		</field>
+		<field name="submitButton" use-when="VvFaseA==null" title="${uiLabelMap.CommonCreate}">
+			<submit button-type="button" />
+		</field>
+		<field name="submitButton" use-when="VvFaseA!=null" title="${uiLabelMap.CommonUpdate}">
+			<submit button-type="button" />
+		</field>
+	</form>
+
+
+
+	<form name="ListFaseA" list-name="listFaseA" target="" title="" type="list" paginate-target="findFaseAs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true" extends="ListFaseA"
+		extends-resource="component://vvproduction/widget/CsvForms.xml">
+
+
 		<field name="deleteLink" title=" " widget-style="buttontext">
 			<hyperlink description="${uiLabelMap.CommonDelete}" target="deleteFaseA" also-hidden="false"
 				confirmation-message="${uiLabelMap.CommonConfirmDelete}" image-location="${iconsLocation}/delete.png">
 				<parameter param-name="faseId" />
 			</hyperlink>
 		</field>
+	</form>
+
+	<form name="EditFaseB" type="single" target="updateFaseB" title="" default-map-name="VvFaseB" default-entity-name="VfFaseB">
+		<alt-target use-when="VvFaseB==null" target="createFaseB" />
+		<!-- <auto-fields-service service-name="updateShipment"/> -->
+		<field use-when="VvFaseB!=null" name="faseId" title="${uiLabelMap.GeneralId}">
+			<display />
+		</field>
+		<field use-when="VvFaseB==null @and faseId==null" name="faseId" title="${uiLabelMap.GeneralId}">
+			<ignored />
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductId}">
+			<lookup target-form-name="LookupProduct" position="center" />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<date-time type="date" />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<drop-down allow-empty="true">
+				<entity-options entity-name="VvEnumeration" key-field-name="enumId" description="${description}">
+					<entity-constraint name="enumTypeId" value="VV_SHIFT_TYPE" />
+					<entity-order-by field-name="sequenceId" />
+				</entity-options>
+			</drop-down>
+		</field>
+		<field name="worker" title="${uiLabelMap.VvWorker}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<text size="5" maxlength="10" />
+		</field>
+		<field name="scrap" title="${uiLabelMap.VvScrap}">
+			<text size="5" maxlength="10" />
+		</field>
+		
+		<field name="filshowFaseB">
+			<hidden value="Y" />
+		</field>
+		<field name="filproductId">
+			<hidden value="${filproductId}" />
+		</field>
+
+		<field name="fildate1From">
+			<hidden value="${fildate1From}" />
+		</field>
+		<field name="fildate2From">
+			<hidden value="${fildate2From}" />
+		</field>
+		
+		<field name="submitButton" use-when="VvFaseB==null" title="${uiLabelMap.CommonCreate}">
+			<submit button-type="button" />
+		</field>
+		<field name="submitButton" use-when="VvFaseB!=null" title="${uiLabelMap.CommonUpdate}">
+			<submit button-type="button" />
+		</field>
+	</form>
+
+	<form name="ListFaseB" list-name="listFaseB" target="" title="" type="list" paginate-target="findFaseBs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true" extends="ListFaseB"
+		extends-resource="component://vvproduction/widget/CsvForms.xml">
+
+
+		<field name="deleteLink" title=" " widget-style="buttontext">
+			<hyperlink description="${uiLabelMap.CommonDelete}" target="deleteFaseB" also-hidden="false"
+				confirmation-message="${uiLabelMap.CommonConfirmDelete}" image-location="${iconsLocation}/delete.png">
+				<parameter param-name="faseId" />
+			</hyperlink>
+		</field>
+	</form>
+
+	<form name="EditFaseC" type="single" target="updateFaseC" title="" default-map-name="VvFaseC" default-entity-name="VvFaseC">
+		<alt-target use-when="VvFaseC==null" target="createFaseC" />
+		<!-- <auto-fields-service service-name="updateShipment"/> -->
+		<field use-when="VvFaseC!=null" name="faseId" title="${uiLabelMap.GeneralId}">
+			<display />
+		</field>
+		<field use-when="VvFaseC==null @and faseId==null" name="faseId" title="${uiLabelMap.GeneralId}">
+			<ignored />
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductId}">
+			<lookup target-form-name="LookupProduct" position="center" />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<date-time type="date" />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<drop-down allow-empty="true">
+				<entity-options entity-name="VvEnumeration" key-field-name="enumId" description="${description}">
+					<entity-constraint name="enumTypeId" value="VV_SHIFT_TYPE" />
+					<entity-order-by field-name="sequenceId" />
+				</entity-options>
+			</drop-down>
+		</field>
+		<field name="worker" title="${uiLabelMap.VvWorker}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<text size="5" maxlength="10" />
+		</field>
+		<field name="scrap" title="${uiLabelMap.VvScrap}">
+			<text size="5" maxlength="10" />
+		</field>
+
+		<field name="filshowFaseC">
+			<hidden value="Y" />
+		</field>
+		<field name="filproductId">
+			<hidden value="${filproductId}" />
+		</field>
+
+		<field name="fildate1From">
+			<hidden value="${fildate1From}" />
+		</field>
+		<field name="fildate2From">
+			<hidden value="${fildate2From}" />
+		</field>
+
+		<field name="submitButton" use-when="VvFaseC==null" title="${uiLabelMap.CommonCreate}">
+			<submit button-type="button" />
+		</field>
+		<field name="submitButton" use-when="VvFaseC!=null" title="${uiLabelMap.CommonUpdate}">
+			<submit button-type="button" />
+		</field>
+	</form>
+
+	<form name="ListFaseC" list-name="listFaseC" target="" title="" type="list" paginate-target="findFaseCs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true" extends="ListFaseC"
+		extends-resource="component://vvproduction/widget/CsvForms.xml">
+
+
+		<field name="deleteLink" title=" " widget-style="buttontext">
+			<hyperlink description="${uiLabelMap.CommonDelete}" target="deleteFaseC" also-hidden="false"
+				confirmation-message="${uiLabelMap.CommonConfirmDelete}" image-location="${iconsLocation}/delete.png">
+				<parameter param-name="faseId" />
+			</hyperlink>
+		</field>
+	</form>
+
+	<form name="EditFaseD" type="single" target="updateFaseD" title="" default-map-name="VvFaseD" default-entity-name="VvFaseD">
+		<alt-target use-when="VvFaseD==null" target="createFaseD" />
+		<!-- <auto-fields-service service-name="updateShipment"/> -->
+		<field use-when="VvFaseD!=null" name="faseId" title="${uiLabelMap.GeneralId}">
+			<display />
+		</field>
+		<field use-when="VvFaseD==null @and faseId==null" name="faseId" title="${uiLabelMap.GeneralId}">
+			<ignored />
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductId}">
+			<lookup target-form-name="LookupProduct" position="center" />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<date-time type="date" />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<drop-down allow-empty="true">
+				<entity-options entity-name="VvEnumeration" key-field-name="enumId" description="${description}">
+					<entity-constraint name="enumTypeId" value="VV_SHIFT_TYPE" />
+					<entity-order-by field-name="sequenceId" />
+				</entity-options>
+			</drop-down>
+		</field>
+		<field name="worker" title="${uiLabelMap.VvWorker}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<text size="5" maxlength="10" />
+		</field>
+		<field name="scrap" title="${uiLabelMap.VvScrap}">
+			<text size="5" maxlength="10" />
+		</field>
+		
+		<field name="filshowFaseD">
+			<hidden value="Y" />
+		</field>
+		<field name="filproductId">
+			<hidden value="${filproductId}" />
+		</field>
+
+		<field name="fildate1From">
+			<hidden value="${fildate1From}" />
+		</field>
+		<field name="fildate2From">
+			<hidden value="${fildate2From}" />
+		</field>
+		
+		<field name="submitButton" use-when="VvFaseD==null" title="${uiLabelMap.CommonCreate}">
+			<submit button-type="button" />
+		</field>
+		<field name="submitButton" use-when="VvFaseD!=null" title="${uiLabelMap.CommonUpdate}">
+			<submit button-type="button" />
+		</field>
+	</form>
+
+	<form name="ListFaseD" list-name="listFaseD" target="" title="" type="list" paginate-target="findFaseDs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true" extends="ListFaseD"
+		extends-resource="component://vvproduction/widget/CsvForms.xml">
+
+
+		<field name="deleteLink" title=" " widget-style="buttontext">
+			<hyperlink description="${uiLabelMap.CommonDelete}" target="deleteFaseD" also-hidden="false"
+				confirmation-message="${uiLabelMap.CommonConfirmDelete}" image-location="${iconsLocation}/delete.png">
+				<parameter param-name="faseId" />
+			</hyperlink>
+		</field>
+	</form>
+
+	<form name="EditFaseE" type="single" target="updateFaseE" title="" default-map-name="VvFaseE" default-entity-name="VvFaseE">
+		<alt-target use-when="VvFaseE==null" target="createFaseE" />
+		<!-- <auto-fields-service service-name="updateShipment"/> -->
+		<field use-when="VvFaseE!=null" name="faseId" title="${uiLabelMap.GeneralId}">
+			<display />
+		</field>
+		<field use-when="VvFaseE==null @and faseId==null" name="faseId" title="${uiLabelMap.GeneralId}">
+			<ignored />
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductId}">
+			<lookup target-form-name="LookupProduct" position="center" />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<date-time type="date" />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<drop-down allow-empty="true">
+				<entity-options entity-name="VvEnumeration" key-field-name="enumId" description="${description}">
+					<entity-constraint name="enumTypeId" value="VV_SHIFT_TYPE" />
+					<entity-order-by field-name="sequenceId" />
+				</entity-options>
+			</drop-down>
+		</field>
+		<field name="worker" title="${uiLabelMap.VvWorker}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<text size="5" maxlength="10" />
+		</field>
+		<field name="scrap" title="${uiLabelMap.VvScrap}">
+			<text size="5" maxlength="10" />
+		</field>
+		
+		<field name="filshowFaseE">
+			<hidden value="Y" />
+		</field>
+		<field name="filproductId">
+			<hidden value="${filproductId}" />
+		</field>
+
+		<field name="fildate1From">
+			<hidden value="${fildate1From}" />
+		</field>
+		<field name="fildate2From">
+			<hidden value="${fildate2From}" />
+		</field>
+		
+		<field name="submitButton" use-when="VvFaseE==null" title="${uiLabelMap.CommonCreate}">
+			<submit button-type="button" />
+		</field>
+		<field name="submitButton" use-when="VvFaseE!=null" title="${uiLabelMap.CommonUpdate}">
+			<submit button-type="button" />
+		</field>
+	</form>
+
+	<form name="ListFaseE" list-name="listFaseE" target="" title="" type="list" paginate-target="findFaseEs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true" extends="ListFaseE"
+		extends-resource="component://vvproduction/widget/CsvForms.xml">
+
+
+		<field name="deleteLink" title=" " widget-style="buttontext">
+			<hyperlink description="${uiLabelMap.CommonDelete}" target="deleteFaseE" also-hidden="false"
+				confirmation-message="${uiLabelMap.CommonConfirmDelete}" image-location="${iconsLocation}/delete.png">
+				<parameter param-name="faseId" />
+			</hyperlink>
+		</field>
+	</form>
+
+	<form name="EditFaseF" type="single" target="updateFaseF" title="" default-map-name="VvFaseF" default-entity-name="VvFaseF">
+		<alt-target use-when="VvFaseF==null" target="createFaseF" />
+		<!-- <auto-fields-service service-name="updateShipment"/> -->
+		<field use-when="VvFaseF!=null" name="faseId" title="${uiLabelMap.GeneralId}">
+			<display />
+		</field>
+		<field use-when="VvFaseF==null @and faseId==null" name="faseId" title="${uiLabelMap.GeneralId}">
+			<ignored />
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductId}">
+			<lookup target-form-name="LookupProduct" position="center" />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<date-time type="date" />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<drop-down allow-empty="true">
+				<entity-options entity-name="VvEnumeration" key-field-name="enumId" description="${description}">
+					<entity-constraint name="enumTypeId" value="VV_SHIFT_TYPE" />
+					<entity-order-by field-name="sequenceId" />
+				</entity-options>
+			</drop-down>
+		</field>
+		<field name="worker" title="${uiLabelMap.VvWorker}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<text size="50" maxlength="50" />
+		</field>
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<text size="5" maxlength="10" />
+		</field>
+		<field name="scrap" title="${uiLabelMap.VvScrap}">
+			<text size="5" maxlength="10" />
+		</field>
+		
+		<field name="filshowFaseF">
+			<hidden value="Y" />
+		</field>
+		<field name="filproductId">
+			<hidden value="${filproductId}" />
+		</field>
+
+		<field name="fildate1From">
+			<hidden value="${fildate1From}" />
+		</field>
+		<field name="fildate2From">
+			<hidden value="${fildate2From}" />
+		</field>
+		
+		<field name="submitButton" use-when="VvFaseF==null" title="${uiLabelMap.CommonCreate}">
+			<submit button-type="button" />
+		</field>
+		<field name="submitButton" use-when="VvFaseF!=null" title="${uiLabelMap.CommonUpdate}">
+			<submit button-type="button" />
+		</field>
+	</form>
+
+	<form name="ListFaseF" list-name="listFaseF" target="" title="" type="list" paginate-target="findFaseFs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true" extends="ListFaseF"
+		extends-resource="component://vvproduction/widget/CsvForms.xml">
+
+
+		<field name="deleteLink" title=" " widget-style="buttontext">
+			<hyperlink description="${uiLabelMap.CommonDelete}" target="deleteFaseF" also-hidden="false"
+				confirmation-message="${uiLabelMap.CommonConfirmDelete}" image-location="${iconsLocation}/delete.png">
+				<parameter param-name="faseId" />
+			</hyperlink>
+		</field>
+	</form>
+
+
+
+
+
+	<form name="FilterGeneral" type="single" target="findConditions">
+		<alt-target use-when="faseAPage=='Y'" target="findFaseAs" />
+		<alt-target use-when="faseBPage=='Y'" target="findFaseBs" />
+		<alt-target use-when="faseCPage=='Y'" target="findFaseCs" />
+		<alt-target use-when="faseDPage=='Y'" target="findFaseDs" />
+		<alt-target use-when="faseEPage=='Y'" target="findFaseEs" />
+		<alt-target use-when="faseFPage=='Y'" target="findFaseFs" />
+
+
+		<field name="filproductId" title="${uiLabelMap.VvProductId}">
+			<lookup target-form-name="LookupProduct" position="center" />
+		</field>
+
+		<field name="fildate1From" title="${groovy: fildate1FromTitle}">
+			<date-time
+				default-value="${groovy: org.apache.ofbiz.base.util.UtilDateTime.addDaysToTimestamp(org.apache.ofbiz.base.util.UtilDateTime.nowTimestamp(), -1)}"
+				type="date" />
+		</field>
+		<field name="fildate2From" title="${fildate2FromTitle}">
+			<date-time type="date" />
+		</field>
+
+		<field use-when="faseAPage=='Y'" name="filshowFaseA">
+			<hidden value="Y" />
+		</field>
+		<field use-when="reportPage=='Y'" name="filshowFaseA">
+			<check />
+		</field>
+		<field use-when="faseBPage=='Y'" name="filshowFaseB">
+			<hidden value="Y" />
+		</field>
+		<field use-when="reportPage=='Y'" name="filshowFaseB">
+			<check />
+		</field>
+		<field use-when="faseCPage=='Y'" name="filshowFaseC">
+			<hidden value="Y" />
+		</field>
+		<field use-when="reportPage=='Y'" name="filshowFaseC">
+			<check />
+		</field>
+		<field use-when="faseDPage=='Y'" name="filshowFaseD">
+			<hidden value="Y" />
+		</field>
+		<field use-when="reportPage=='Y'" name="filshowFaseD">
+			<check />
+		</field>
+		<field use-when="faseEPage=='Y'" name="filshowFaseE">
+			<hidden value="Y" />
+		</field>
+		<field use-when="reportPage=='Y'" name="filshowFaseE">
+			<check />
+		</field>
+		<field use-when="faseFPage=='Y'" name="filshowFaseF">
+			<hidden value="Y" />
+		</field>
+		<field use-when="reportPage=='Y'" name="filshowFaseF">
+			<check />
+		</field>
+
+
+		<field name="searchButton" title="${uiLabelMap.Filter}" widget-style="smallSubmit">
+			<submit button-type="button" />
+		</field>
+
+
 	</form>
 
 

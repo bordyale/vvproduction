@@ -70,6 +70,54 @@ under the License.
         <value xml:lang="en">Csomagoló</value>
         <value xml:lang="hu">Csomagoló</value>
     </property>
+     <property key="EditFaseA">
+        <value xml:lang="en">Production</value>
+        <value xml:lang="hu">Termelés</value>
+    </property>
+    <property key="EditFaseB">
+        <value xml:lang="en">Abraziv</value>
+        <value xml:lang="hu">Abraziv</value>
+    </property>
+    <property key="EditFaseC">
+        <value xml:lang="en">Körasztal</value>
+        <value xml:lang="hu">Körasztal</value>
+    </property>
+     <property key="EditFaseD">
+        <value xml:lang="en">Csiszoló</value>
+        <value xml:lang="hu">Csiszoló</value>
+    </property>
+    <property key="EditFaseE">
+        <value xml:lang="en">Forgacsoló</value>
+        <value xml:lang="hu">Forgacsoló</value>
+    </property>
+    <property key="EditFaseF">
+        <value xml:lang="en">Csomagoló</value>
+        <value xml:lang="hu">Csomagoló</value>
+    </property>
+    <property key="FindFaseA">
+        <value xml:lang="en">Production</value>
+        <value xml:lang="hu">Termelés</value>
+    </property>
+    <property key="FindFaseB">
+        <value xml:lang="en">Abraziv</value>
+        <value xml:lang="hu">Abraziv</value>
+    </property>
+    <property key="FindFaseC">
+        <value xml:lang="en">Körasztal</value>
+        <value xml:lang="hu">Körasztal</value>
+    </property>
+     <property key="FindFaseD">
+        <value xml:lang="en">Csiszoló</value>
+        <value xml:lang="hu">Csiszoló</value>
+    </property>
+    <property key="FindFaseE">
+        <value xml:lang="en">Forgacsoló</value>
+        <value xml:lang="hu">Forgacsoló</value>
+    </property>
+    <property key="FindFaseF">
+        <value xml:lang="en">Csomagoló</value>
+        <value xml:lang="hu">Csomagoló</value>
+    </property>
     <property key="VvReports">
         <value xml:lang="en">Reports</value>
         <value xml:lang="hu">Osszesítók</value>
@@ -102,6 +150,10 @@ under the License.
         <value xml:lang="en">Quantity</value>
         <value xml:lang="hu">Mennyíség</value>
     </property>
+     <property key="VvWorker">
+        <value xml:lang="en">Worker</value>
+        <value xml:lang="hu">Dolgozó</value>
+    </property>
     <property key="FindFaseA">
         <value xml:lang="en">Find Production</value>
         <value xml:lang="hu">Termelés keresése</value>
@@ -113,5 +165,9 @@ under the License.
     <property key="VvProductName">
         <value xml:lang="en">Product Name</value>
         <value xml:lang="hu">Termék</value>
+    </property>
+    <property key="VvScrap">
+        <value xml:lang="en">Scrap</value>
+        <value xml:lang="hu">Selejt</value>
     </property>
 </resource>

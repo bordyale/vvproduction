@@ -28,7 +28,7 @@ under the License.
     <copyright></copyright>
     <version></version>
     <!-- Termelés -->
-    <entity entity-name="FaseA" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseA Entity">
+    <entity entity-name="VvFaseA" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseA Entity">
 		<!-- cikk szám -->
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>
@@ -44,7 +44,7 @@ under the License.
 		</relation>
 	</entity>
 	<!-- Abraziv -->
-	<entity entity-name="FaseB" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseB Entity">
+	<entity entity-name="VvFaseB" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseB Entity">
 		<!-- cikk szám -->
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>
@@ -62,7 +62,7 @@ under the License.
 		</relation>
 	</entity>
 	<!-- Körasztal -->
-	<entity entity-name="FaseC" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseC Entity">
+	<entity entity-name="VvFaseC" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseC Entity">
 		<!-- cikk szám -->
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>
@@ -80,7 +80,7 @@ under the License.
 		</relation>
 	</entity>
 	<!-- Csiszoló -->
-	<entity entity-name="FaseD" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseD Entity">
+	<entity entity-name="VvFaseD" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseD Entity">
 		<!-- cikk szám -->
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>
@@ -99,7 +99,7 @@ under the License.
 	</entity>
 	
 	<!-- Forgacsoló -->
-	<entity entity-name="FaseE" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseE Entity">
+	<entity entity-name="VvFaseE" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseE Entity">
 		<!-- cikk szám -->
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>
@@ -118,7 +118,7 @@ under the License.
 	</entity>
 	
 		<!-- Csomagoló -->
-	<entity entity-name="FaseF" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseF Entity">
+	<entity entity-name="VvFaseF" package-name="org.apache.ofbiz.order.vvproduction" never-cache="true" title="VvFaseF Entity">
 		<!-- cikk szám -->
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ofbiz.apache.org/Widget-Form"
+	xsi:schemaLocation="http://ofbiz.apache.org/Widget-Form http://ofbiz.apache.org/dtds/widget-form.xsd">
+
+
+
+	<form name="ListFaseA" list-name="listFaseA" target="" title="" type="list" paginate-target="findFaseAs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true">
+
+
+		<field name="faseId" title="${uiLabelMap.GeneralId}">
+			<hyperlink description="${faseId}" target="EditFaseA" also-hidden="false">
+				<parameter param-name="faseId" />
+				<parameter param-name="filshowFaseA" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</hyperlink>
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductName}">
+			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}" />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<display type="date" />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<display-entity entity-name="VvEnumeration" key-field-name="enumId" description="${description}" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<display />
+		</field>
+
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<display />
+		</field>
+
+	</form>
+
+	<form name="ListFaseB" list-name="listFaseB" target="" title="" type="list" paginate-target="findFaseBs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true">
+
+
+		<field name="faseId" title="${uiLabelMap.GeneralId}">
+			<hyperlink description="${faseId}" target="EditFaseB" also-hidden="false">
+				<parameter param-name="faseId" />
+				<parameter param-name="filshowFaseB" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</hyperlink>
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductName}">
+			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}" />
+		</field>
+		<field name="worker" title="${uiLabelMap.VvWorker}">
+			<display />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<display type="date" />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<display-entity entity-name="VvEnumeration" key-field-name="enumId" description="${description}" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<display />
+		</field>
+
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<display />
+		</field>
+		<field name="scrap" title="${uiLabelMap.VvScrap}">
+			<display />
+		</field>
+
+	</form>
+
+	<form name="ListFaseC" list-name="listFaseC" target="" title="" type="list" paginate-target="findFaseCs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true">
+
+
+		<field name="faseId" title="${uiLabelMap.GeneralId}">
+			<hyperlink description="${faseId}" target="EditFaseC" also-hidden="false">
+				<parameter param-name="faseId" />
+				<parameter param-name="filshowFaseC" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</hyperlink>
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductName}">
+			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}" />
+		</field>
+		<field name="worker" title="${uiLabelMap.VvWorker}">
+			<display />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<display type="date" />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<display-entity entity-name="VvEnumeration" key-field-name="enumId" description="${description}" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<display />
+		</field>
+
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<display />
+		</field>
+		<field name="scrap" title="${uiLabelMap.VvScrap}">
+			<display />
+		</field>
+
+	</form>
+
+	<form name="ListFaseD" list-name="listFaseD" target="" title="" type="list" paginate-target="findFaseDs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true">
+
+
+		<field name="faseId" title="${uiLabelMap.GeneralId}">
+			<hyperlink description="${faseId}" target="EditFaseD" also-hidden="false">
+				<parameter param-name="faseId" />
+				<parameter param-name="filshowFaseD" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</hyperlink>
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductName}">
+			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}" />
+		</field>
+		<field name="worker" title="${uiLabelMap.VvWorker}">
+			<display />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<display type="date" />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<display-entity entity-name="VvEnumeration" key-field-name="enumId" description="${description}" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<display />
+		</field>
+
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<display />
+		</field>
+		<field name="scrap" title="${uiLabelMap.VvScrap}">
+			<display />
+		</field>
+
+	</form>
+
+	<form name="ListFaseE" list-name="listFaseE" target="" title="" type="list" paginate-target="findFaseEs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true">
+
+
+		<field name="faseId" title="${uiLabelMap.GeneralId}">
+			<hyperlink description="${faseId}" target="EditFaseE" also-hidden="false">
+				<parameter param-name="faseId" />
+				<parameter param-name="filshowFaseE" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</hyperlink>
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductName}">
+			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}" />
+		</field>
+		<field name="worker" title="${uiLabelMap.VvWorker}">
+			<display />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<display type="date" />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<display-entity entity-name="VvEnumeration" key-field-name="enumId" description="${description}" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<display />
+		</field>
+
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<display />
+		</field>
+		<field name="scrap" title="${uiLabelMap.VvScrap}">
+			<display />
+		</field>
+
+	</form>
+
+	<form name="ListFaseF" list-name="listFaseF" target="" title="" type="list" paginate-target="findFaseFs" odd-row-style="alternate-row"
+		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true">
+
+
+		<field name="faseId" title="${uiLabelMap.GeneralId}">
+			<hyperlink description="${faseId}" target="EditFaseF" also-hidden="false">
+				<parameter param-name="faseId" />
+				<parameter param-name="filshowFaseF" value="Y" />
+				<parameter param-name="filproductId" />
+				<parameter param-name="fildate1From" />
+				<parameter param-name="fildate2From" />
+			</hyperlink>
+		</field>
+		<field name="productId" title="${uiLabelMap.VvProductName}">
+			<display-entity entity-name="VvProduct" key-field-name="productId" description="${name}" />
+		</field>
+		<field name="worker" title="${uiLabelMap.VvWorker}">
+			<display />
+		</field>
+		<field name="date" title="${uiLabelMap.VvDate}">
+			<display type="date" />
+		</field>
+		<field name="shift" title="${uiLabelMap.VvShift}">
+			<display-entity entity-name="VvEnumeration" key-field-name="enumId" description="${description}" />
+		</field>
+		<field name="sn" title="${uiLabelMap.VvSn}">
+			<display />
+		</field>
+
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<display />
+		</field>
+		<field name="scrap" title="${uiLabelMap.VvScrap}">
+			<display />
+		</field>
+
+	</form>
+
+
+
+
+
+
+
+</forms>
