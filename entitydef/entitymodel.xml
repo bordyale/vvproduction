@@ -32,7 +32,7 @@ under the License.
 		<!-- cikk szám -->
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>
-		<field name="quantity" type="floating-point"></field>
+		<field name="quantity" type="fixed-point"></field>
 		<field name="date" type="date-time"></field>
 		<!-- műszak -->
 		<field name="shift" type="value"></field>
@@ -49,8 +49,8 @@ under the License.
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>
 		<field name="worker" type="value"></field>
-		<field name="quantity" type="floating-point"></field>
-		<field name="scrap" type="floating-point"></field>
+		<field name="quantity" type="fixed-point"></field>
+		<field name="scrap" type="fixed-point"></field>
 		<field name="date" type="date-time"></field>
 		<!-- műszak -->
 		<field name="shift" type="value"></field>
@@ -67,8 +67,8 @@ under the License.
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>
 		<field name="worker" type="value"></field>
-		<field name="quantity" type="floating-point"></field>
-		<field name="scrap" type="floating-point"></field>
+		<field name="quantity" type="fixed-point"></field>
+		<field name="scrap" type="fixed-point"></field>
 		<field name="date" type="date-time"></field>
 		<!-- műszak -->
 		<field name="shift" type="value"></field>
@@ -85,8 +85,8 @@ under the License.
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>
 		<field name="worker" type="value"></field>
-		<field name="quantity" type="floating-point"></field>
-		<field name="scrap" type="floating-point"></field>
+		<field name="quantity" type="fixed-point"></field>
+		<field name="scrap" type="fixed-point"></field>
 		<field name="date" type="date-time"></field>
 		<!-- műszak -->
 		<field name="shift" type="value"></field>
@@ -104,8 +104,8 @@ under the License.
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>
 		<field name="worker" type="value"></field>
-		<field name="quantity" type="floating-point"></field>
-		<field name="scrap" type="floating-point"></field>
+		<field name="quantity" type="fixed-point"></field>
+		<field name="scrap" type="fixed-point"></field>
 		<field name="date" type="date-time"></field>
 		<!-- műszak -->
 		<field name="shift" type="value"></field>
@@ -123,8 +123,8 @@ under the License.
 		<field name="faseId" type="id"></field>
 		<field name="productId" type="id"></field>
 		<field name="worker" type="value"></field>
-		<field name="quantity" type="floating-point"></field>
-		<field name="scrap" type="floating-point"></field>
+		<field name="quantity" type="fixed-point"></field>
+		<field name="scrap" type="fixed-point"></field>
 		<field name="date" type="date-time"></field>
 		<!-- műszak -->
 		<field name="shift" type="value"></field>
