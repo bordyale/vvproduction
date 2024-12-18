@@ -185,6 +185,66 @@
 			</widgets>
 		</section>
 	</screen>
+	<screen name="ReportsExport">
+		<section>
+			<actions>
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+				<set field="filproductId" from-field="parameters.filproductId" />		
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate1FromTitle" value="${groovy: uiLabelMap.From}" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
+				<set field="filshowFaseA" from-field="parameters.filshowFaseF" />
+				<set field="filshowFaseB" from-field="parameters.filshowFaseF" />
+				<set field="filshowFaseC" from-field="parameters.filshowFaseF" />
+				<set field="filshowFaseD" from-field="parameters.filshowFaseF" />
+				<set field="filshowFaseE" from-field="parameters.filshowFaseF" />
+				<set field="filshowFaseF" from-field="parameters.filshowFaseF" />
+				<set field="faseAPage" value="Y" />
+
+				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="10000" />
+				<set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0" />
+				<property-to-field resource="widget" property="widget.form.defaultViewSize" field="viewSizeDefaultValue" />
+				<script location="component://vvproduction/groovyScripts/FaseA.groovy" />
+				<script location="component://vvproduction/groovyScripts/FaseB.groovy" />
+				<script location="component://vvproduction/groovyScripts/FaseC.groovy" />
+				<script location="component://vvproduction/groovyScripts/FaseD.groovy" />
+				<script location="component://vvproduction/groovyScripts/FaseE.groovy" />
+				<script location="component://vvproduction/groovyScripts/FaseF.groovy" />
+
+			</actions>
+			<widgets>
+				<container>
+								<label style="h2" text="${uiLabelMap.FaseAs}" />
+							</container>
+							<include-form name="ListFaseA" location="component://vvproduction/widget/CsvForms.xml" />
+							<container>
+								<label style="h2" text="${uiLabelMap.FaseBs}" />
+							</container>
+							<include-form name="ListFaseB" location="component://vvproduction/widget/CsvForms.xml" />
+							<container>
+								<label style="h2" text="${uiLabelMap.FaseCs}" />
+							</container>
+							<include-form name="ListFaseC" location="component://vvproduction/widget/CsvForms.xml" />
+							<container>
+								<label style="h2" text="${uiLabelMap.FaseDs}" />
+							</container>
+							<include-form name="ListFaseD" location="component://vvproduction/widget/CsvForms.xml" />
+							<container>
+								<label style="h2" text="${uiLabelMap.FaseEs}" />
+							</container>
+							<include-form name="ListFaseE" location="component://vvproduction/widget/CsvForms.xml" />
+							<container>
+								<label style="h2" text="${uiLabelMap.FaseFs}" />
+							</container>
+							<include-form name="ListFaseF" location="component://vvproduction/widget/CsvForms.xml" />
+
+			</widgets>
+		</section>
+	</screen>
 
 
 

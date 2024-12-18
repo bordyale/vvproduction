@@ -554,4 +554,99 @@
 		</section>
 	</screen>
 
+	<screen name="FindVvReports">
+		<section>
+			<actions>
+				<set field="titleProperty" value="VvReports" />
+				<set field="headerItem" value="findVvReports" />
+				<property-map resource="VvorderUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvproductionUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
+				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="fildate1From" from-field="parameters.fildate1From" />
+				<set field="fildate1FromTitle" value="${groovy: uiLabelMap.From}" />
+				<set field="fildate2From" from-field="parameters.fildate2From" />
+				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
+				<set field="filshowFaseA" from-field="parameters.filshowFaseF" />
+				<set field="filshowFaseB" from-field="parameters.filshowFaseF" />
+				<set field="filshowFaseC" from-field="parameters.filshowFaseF" />
+				<set field="filshowFaseD" from-field="parameters.filshowFaseF" />
+				<set field="filshowFaseE" from-field="parameters.filshowFaseF" />
+				<set field="filshowFaseF" from-field="parameters.filshowFaseF" />
+				<set field="reportPage" value="Y" />
+				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="200" />
+				<script location="component://vvproduction/groovyScripts/FaseA.groovy" />
+				<script location="component://vvproduction/groovyScripts/FaseB.groovy" />
+				<script location="component://vvproduction/groovyScripts/FaseC.groovy" />
+				<script location="component://vvproduction/groovyScripts/FaseD.groovy" />
+				<script location="component://vvproduction/groovyScripts/FaseE.groovy" />
+				<script location="component://vvproduction/groovyScripts/FaseF.groovy" />
+
+				<set field="formShippingListName" value="${groovy: return 'ListFaseF';}" />
+				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
+
+				<!-- asmselect parameters, must be prefixed by asm_ for SetMultipleSelectJs.ftl -->
+
+			</actions>
+			<widgets>
+				<decorator-screen name="VvproductionCommonDecorator" location="${parameters.mainDecoratorLocation}">
+					<decorator-section name="body">
+						<container style="button-bar">
+							<link target="ReportsExport.csv" text="${uiLabelMap.CommonExport}" style="buttontext create" target-window="_blank">
+								<parameter param-name="filproductId" />
+								<parameter param-name="fildate1From" />
+								<parameter param-name="fildate2From" />
+								<parameter param-name="filshowFaseA" />
+								<parameter param-name="filshowFaseB" />
+								<parameter param-name="filshowFaseC" />
+								<parameter param-name="filshowFaseD" />
+								<parameter param-name="filshowFaseE" />
+								<parameter param-name="filshowFaseF" />
+							</link>
+							<!-- <link target="ReportExportPdf" text="${uiLabelMap.CommonPdf}" style="buttontext create" target-window="_blank"> <parameter 
+								param-name="filshowClientNotes" /> <parameter param-name="filshowClientInfos" /> </link> -->
+						</container>
+
+						<screenlet title="${uiLabelMap.Filter}">
+							<include-form name="FilterGeneral" location="component://vvproduction/widget/VvproductionForms.xml" />
+						</screenlet>
+
+						<screenlet title="${uiLabelMap.Report}">
+
+							<container>
+								<label style="h2" text="${uiLabelMap.FaseAs}" />
+							</container>
+							<include-form name="ListFaseA" location="component://vvproduction/widget/CsvForms.xml" />
+							<container>
+								<label style="h2" text="${uiLabelMap.FaseBs}" />
+							</container>
+							<include-form name="ListFaseB" location="component://vvproduction/widget/CsvForms.xml" />
+							<container>
+								<label style="h2" text="${uiLabelMap.FaseCs}" />
+							</container>
+							<include-form name="ListFaseC" location="component://vvproduction/widget/CsvForms.xml" />
+							<container>
+								<label style="h2" text="${uiLabelMap.FaseDs}" />
+							</container>
+							<include-form name="ListFaseD" location="component://vvproduction/widget/CsvForms.xml" />
+							<container>
+								<label style="h2" text="${uiLabelMap.FaseEs}" />
+							</container>
+							<include-form name="ListFaseE" location="component://vvproduction/widget/CsvForms.xml" />
+							<container>
+								<label style="h2" text="${uiLabelMap.FaseFs}" />
+							</container>
+							<include-form name="ListFaseF" location="component://vvproduction/widget/CsvForms.xml" />
+
+						</screenlet>
+
+
+
+					</decorator-section>
+				</decorator-screen>
+			</widgets>
+		</section>
+	</screen>
+
 </screens>

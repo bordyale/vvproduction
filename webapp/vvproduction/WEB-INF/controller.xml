@@ -184,6 +184,11 @@
 		<response name="error" type="view" value="findFaseFs" />
 	</request-map>
 
+	<request-map uri="findVvReports">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="findVvReports" />
+	</request-map>
+
 	<!-- Events to run on every request before security (chains exempt) -->
 	<!-- <preprocessor> </preprocessor> -->
 	<!-- Events to run on every request after all other processing (chains exempt) -->
@@ -238,6 +243,11 @@
 		<response name="success" type="view" value="FaseFExport" />
 	</request-map>
 
+	<request-map uri="ReportsExport.csv">
+		<security https="true" auth="true" />
+		<response name="success" type="view" value="ReportsExport" />
+	</request-map>
+
 	<!-- View Mappings -->
 	<view-map name="main" type="screen" page="component://vvproduction/widget/VvproductionScreens.xml#main" />
 
@@ -257,6 +267,8 @@
 	<view-map name="findFaseFs" type="screen" page="component://vvproduction/widget/VvproductionScreens.xml#FindFaseFs" />
 	<view-map name="EditFaseF" type="screen" page="component://vvproduction/widget/VvproductionScreens.xml#EditFaseF" />
 
+	<view-map name="findVvReports" type="screen" page="component://vvproduction/widget/VvproductionScreens.xml#FindVvReports" />
+
 	<view-map name="LookupProduct" type="screen" page="component://vvproduction/widget/LookupScreens.xml#LookupProduct" />
 	<view-map name="LookupPartner" type="screen" page="component://vvproduction/widget/LookupScreens.xml#LookupPartner" />
 
@@ -272,6 +284,8 @@
 	<view-map name="FaseEExport" type="screencsv" page="component://vvproduction/widget/CsvScreens.xml#FaseEExport"
 		content-type="text/csv" encoding="none" />
 	<view-map name="FaseFExport" type="screencsv" page="component://vvproduction/widget/CsvScreens.xml#FaseFExport"
+		content-type="text/csv" encoding="none" />
+	<view-map name="ReportsExport" type="screencsv" page="component://vvproduction/widget/CsvScreens.xml#ReportsExport"
 		content-type="text/csv" encoding="none" />
 
 </site-conf>

@@ -93,7 +93,8 @@
 			<condition>
 				<if-has-permission permission="VVPRODUCTION" action="_VIEW" />
 			</condition>
-			<link target="findVvReports" />
+			<link target="findVvReports" >
+			</link>
 		</menu-item>
 	</menu>
 </menus>

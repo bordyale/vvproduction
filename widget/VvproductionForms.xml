@@ -443,6 +443,7 @@
 		<alt-target use-when="faseDPage=='Y'" target="findFaseDs" />
 		<alt-target use-when="faseEPage=='Y'" target="findFaseEs" />
 		<alt-target use-when="faseFPage=='Y'" target="findFaseFs" />
+		<alt-target use-when="reportPage=='Y'" target="findVvReports" />
 
 
 		<field name="filproductId" title="${uiLabelMap.VvProductId}">
