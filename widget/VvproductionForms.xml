@@ -462,37 +462,37 @@
 		<field use-when="faseAPage=='Y'" name="filshowFaseA">
 			<hidden value="Y" />
 		</field>
-		<field use-when="reportPage=='Y'" name="filshowFaseA">
+		<field use-when="reportPage=='Y'" name="filshowFaseA" title="${uiLabelMap.CheckFaseA}">
 			<check />
 		</field>
 		<field use-when="faseBPage=='Y'" name="filshowFaseB">
 			<hidden value="Y" />
 		</field>
-		<field use-when="reportPage=='Y'" name="filshowFaseB">
+		<field use-when="reportPage=='Y'" name="filshowFaseB" title="${uiLabelMap.CheckFaseB}">
 			<check />
 		</field>
 		<field use-when="faseCPage=='Y'" name="filshowFaseC">
 			<hidden value="Y" />
 		</field>
-		<field use-when="reportPage=='Y'" name="filshowFaseC">
+		<field use-when="reportPage=='Y'" name="filshowFaseC" title="${uiLabelMap.CheckFaseC}">
 			<check />
 		</field>
 		<field use-when="faseDPage=='Y'" name="filshowFaseD">
 			<hidden value="Y" />
 		</field>
-		<field use-when="reportPage=='Y'" name="filshowFaseD">
+		<field use-when="reportPage=='Y'" name="filshowFaseD" title="${uiLabelMap.CheckFaseD}">
 			<check />
 		</field>
 		<field use-when="faseEPage=='Y'" name="filshowFaseE">
 			<hidden value="Y" />
 		</field>
-		<field use-when="reportPage=='Y'" name="filshowFaseE">
+		<field use-when="reportPage=='Y'" name="filshowFaseE" title="${uiLabelMap.CheckFaseE}">
 			<check />
 		</field>
 		<field use-when="faseFPage=='Y'" name="filshowFaseF">
 			<hidden value="Y" />
 		</field>
-		<field use-when="reportPage=='Y'" name="filshowFaseF">
+		<field use-when="reportPage=='Y'" name="filshowFaseF" title="${uiLabelMap.CheckFaseF}">
 			<check />
 		</field>
 

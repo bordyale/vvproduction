@@ -170,4 +170,29 @@ under the License.
         <value xml:lang="en">Scrap</value>
         <value xml:lang="hu">Selejt</value>
     </property>
+    <property key="CheckFaseA">
+        <value xml:lang="en">Check Production</value>
+        <value xml:lang="hu">Check Termelés</value>
+    </property>
+    <property key="CheckFaseB">
+        <value xml:lang="en">Check Abraziv</value>
+        <value xml:lang="hu">Check Abraziv</value>
+    </property>
+    <property key="CheckFaseC">
+        <value xml:lang="en">Check Körasztal</value>
+        <value xml:lang="hu">Check Körasztal</value>
+    </property>
+     <property key="CheckFaseD">
+        <value xml:lang="en">CCheck siszoló</value>
+        <value xml:lang="hu">Check Csiszoló</value>
+    </property>
+    <property key="CheckFaseE">
+        <value xml:lang="en">Check Forgacsoló</value>
+        <value xml:lang="hu">Check Forgacsoló</value>
+    </property>
+    <property key="CheckFaseF">
+        <value xml:lang="en">Check Csomagoló</value>
+        <value xml:lang="hu">Check Csomagoló</value>
+    </property>
+ 
 </resource>
