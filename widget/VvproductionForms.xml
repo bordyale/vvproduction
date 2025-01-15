@@ -449,6 +449,9 @@
 		<field name="filproductId" title="${uiLabelMap.VvProductId}">
 			<lookup target-form-name="LookupProduct" position="center" />
 		</field>
+		<field name="filpartnerId" title="${uiLabelMap.VvPartnerId}">
+			<lookup target-form-name="LookupPartner" position="center" />
+		</field>
 
 		<field name="fildate1From" title="${groovy: fildate1FromTitle}">
 			<date-time
@@ -459,6 +462,9 @@
 			<date-time type="date" />
 		</field>
 
+		<field use-when="reportPage=='Y'" name="filProductionPlan" title="${uiLabelMap.ProductionPlan}">
+			<check />
+		</field>
 		<field use-when="faseAPage=='Y'" name="filshowFaseA">
 			<hidden value="Y" />
 		</field>

@@ -194,5 +194,13 @@ under the License.
         <value xml:lang="en">Check Csomagoló</value>
         <value xml:lang="hu">Check Csomagoló</value>
     </property>
+    <property key="ProductionPlan">
+        <value xml:lang="en">Production Plan</value>
+        <value xml:lang="hu">Termelés Terv</value>
+    </property>
+    <property key="VvWhAvailable">
+        <value xml:lang="en">Warehouse</value>
+        <value xml:lang="hu">Raktár</value>
+    </property>
  
 </resource>

@@ -3,6 +3,49 @@
 	xsi:schemaLocation="http://ofbiz.apache.org/Widget-Form http://ofbiz.apache.org/dtds/widget-form.xsd">
 
 
+	<form name="ProductionPlan" type="list" list-name="orderItems2" odd-row-style="alternate-row" default-table-style="basic-table hover-bar">
+		
+		<field name="orderDate" title="${uiLabelMap.vvorderDate}">
+			<display type="date" />
+		</field>
+		<field name="shipBeforeDate" title="${uiLabelMap.dueDate}">
+			<display type="date" />
+		</field>
+		<field name="orderId" title="${uiLabelMap.VvOrderId}">
+			<display />
+		</field>
+		<field name="orderItemSeqId">
+			<display />
+		</field>
+		<!-- <field name="orderId" title="${uiLabelMap.OrderOrderId}" widget-style="buttontext"> <hyperlink description="${orderId}" target="/catalog/control/EditProductInventoryItems" 
+			target-type="inter-app"> <parameter param-name="orderId"/> </hyperlink> </field> -->
+		<field name="productId" title="${uiLabelMap.VvProductId}">
+			<display />
+		</field>
+		<field name="name" title="${uiLabelMap.VvName}">
+			<display />
+		</field>
+		<field name="quantity" title="${uiLabelMap.VvQuantity}">
+			<display />
+		</field>
+		<field name="quantityShipped" title="${uiLabelMap.VvQuantityShipped}">
+			<display />
+		</field>
+		<field name="quantityShippable" title="${uiLabelMap.VvQuantityShippable}">
+			<display />
+		</field>
+		<field name="whAvailable" title="${uiLabelMap.VvWhAvailable}">
+			<display />
+		</field>
+		<!-- <field name="productWeight"> <display /> </field> -->
+		<field name="netWeight" title="${uiLabelMap.VvWeight}">
+			<display />
+		</field>
+		<field name="progresNetWeight">
+			<display />
+		</field>
+
+	</form>
 
 	<form name="ListFaseA" list-name="listFaseA" target="" title="" type="list" paginate-target="findFaseAs" odd-row-style="alternate-row"
 		default-table-style="basic-table hover-bar" header-row-style="header-row-2" override-list-size="true">

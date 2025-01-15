@@ -193,15 +193,17 @@
 				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
 				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
 				<set field="filproductId" from-field="parameters.filproductId" />		
+				<set field="filpartnerId" from-field="parameters.filpartnerId" />		
 				<set field="fildate1From" from-field="parameters.fildate1From" />
 				<set field="fildate1FromTitle" value="${groovy: uiLabelMap.From}" />
 				<set field="fildate2From" from-field="parameters.fildate2From" />
 				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
-				<set field="filshowFaseA" from-field="parameters.filshowFaseF" />
-				<set field="filshowFaseB" from-field="parameters.filshowFaseF" />
-				<set field="filshowFaseC" from-field="parameters.filshowFaseF" />
-				<set field="filshowFaseD" from-field="parameters.filshowFaseF" />
-				<set field="filshowFaseE" from-field="parameters.filshowFaseF" />
+				<set field="filProductionPlan" from-field="parameters.filProductionPlan" />
+				<set field="filshowFaseA" from-field="parameters.filshowFaseA" />
+				<set field="filshowFaseB" from-field="parameters.filshowFaseB" />
+				<set field="filshowFaseC" from-field="parameters.filshowFaseC" />
+				<set field="filshowFaseD" from-field="parameters.filshowFaseD" />
+				<set field="filshowFaseE" from-field="parameters.filshowFaseE" />
 				<set field="filshowFaseF" from-field="parameters.filshowFaseF" />
 				<set field="faseAPage" value="Y" />
 
@@ -214,10 +216,15 @@
 				<script location="component://vvproduction/groovyScripts/FaseD.groovy" />
 				<script location="component://vvproduction/groovyScripts/FaseE.groovy" />
 				<script location="component://vvproduction/groovyScripts/FaseF.groovy" />
+				<script location="component://vvproduction/groovyScripts/ProductionPlan.groovy" />
 
 			</actions>
 			<widgets>
-				<container>
+							<container>
+								<label style="h2" text="${uiLabelMap.ProductionPlan}" />
+							</container>
+							<include-form name="ProductionPlan" location="component://vvproduction/widget/CsvForms.xml" />
+							<container>
 								<label style="h2" text="${uiLabelMap.FaseAs}" />
 							</container>
 							<include-form name="ListFaseA" location="component://vvproduction/widget/CsvForms.xml" />

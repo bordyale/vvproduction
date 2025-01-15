@@ -564,15 +564,17 @@
 				<property-map resource="VvwarehouseUiLabels" map-name="uiLabelMap" global="true" />
 				<property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
 				<set field="filproductId" from-field="parameters.filproductId" />
+				<set field="filpartnerId" from-field="parameters.filpartnerId" />
 				<set field="fildate1From" from-field="parameters.fildate1From" />
 				<set field="fildate1FromTitle" value="${groovy: uiLabelMap.From}" />
 				<set field="fildate2From" from-field="parameters.fildate2From" />
 				<set field="fildate2FromTitle" value="${groovy: uiLabelMap.To}" />
-				<set field="filshowFaseA" from-field="parameters.filshowFaseF" />
-				<set field="filshowFaseB" from-field="parameters.filshowFaseF" />
-				<set field="filshowFaseC" from-field="parameters.filshowFaseF" />
-				<set field="filshowFaseD" from-field="parameters.filshowFaseF" />
-				<set field="filshowFaseE" from-field="parameters.filshowFaseF" />
+				<set field="filProductionPlan" from-field="parameters.filProductionPlan" />
+				<set field="filshowFaseA" from-field="parameters.filshowFaseA" />
+				<set field="filshowFaseB" from-field="parameters.filshowFaseB" />
+				<set field="filshowFaseC" from-field="parameters.filshowFaseC" />
+				<set field="filshowFaseD" from-field="parameters.filshowFaseD" />
+				<set field="filshowFaseE" from-field="parameters.filshowFaseE" />
 				<set field="filshowFaseF" from-field="parameters.filshowFaseF" />
 				<set field="reportPage" value="Y" />
 				<set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="200" />
@@ -582,6 +584,7 @@
 				<script location="component://vvproduction/groovyScripts/FaseD.groovy" />
 				<script location="component://vvproduction/groovyScripts/FaseE.groovy" />
 				<script location="component://vvproduction/groovyScripts/FaseF.groovy" />
+				<script location="component://vvproduction/groovyScripts/ProductionPlan.groovy" />
 
 				<set field="formShippingListName" value="${groovy: return 'ListFaseF';}" />
 				<!-- <script location="component://vfproduction/groovyScripts/FindShipping.groovy" /> -->
@@ -595,8 +598,10 @@
 						<container style="button-bar">
 							<link target="ReportsExport.csv" text="${uiLabelMap.CommonExport}" style="buttontext create" target-window="_blank">
 								<parameter param-name="filproductId" />
+								<parameter param-name="filpartnerId" />
 								<parameter param-name="fildate1From" />
 								<parameter param-name="fildate2From" />
+								<parameter param-name="filProductionPlan" />
 								<parameter param-name="filshowFaseA" />
 								<parameter param-name="filshowFaseB" />
 								<parameter param-name="filshowFaseC" />
@@ -614,6 +619,10 @@
 
 						<screenlet title="${uiLabelMap.Report}">
 
+							<container>
+								<label style="h2" text="${uiLabelMap.ProductionPlan}" />
+							</container>
+							<include-form name="ProductionPlan" location="component://vvproduction/widget/CsvForms.xml" />
 							<container>
 								<label style="h2" text="${uiLabelMap.FaseAs}" />
 							</container>
